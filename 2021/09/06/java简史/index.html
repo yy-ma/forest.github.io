@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="java简史 SUN公司是一家什么样的公司?   – 美国SUN(Stanford University Network)公司   – 在中国大陆的正式中文名为“太阳计算机系统（中国）有限公司”   – 在台湾中文名为“升 阳电脑公司”。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java简史">
+<meta property="og:url" content="http://example.com/2021/09/06/java%E7%AE%80%E5%8F%B2/index.html">
+<meta property="og:site_name" content="Little Forest">
+<meta property="og:description" content="java简史 SUN公司是一家什么样的公司?   – 美国SUN(Stanford University Network)公司   – 在中国大陆的正式中文名为“太阳计算机系统（中国）有限公司”   – 在台湾中文名为“升 阳电脑公司”。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-09-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-06T14:20:22.109Z">
+<meta property="article:author" content="Yingyi.ma">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/09/06/java%E7%AE%80%E5%8F%B2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/06/java%E7%AE%80%E5%8F%B2/","path":"2021/09/06/java简史/","title":"java简史"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>java简史 | Little Forest</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Little Forest</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">(,,･∀･)ﾉ゛hello</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E7%AE%80%E5%8F%B2"><span class="nav-number">1.</span> <span class="nav-text">java简史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2"><span class="nav-number">2.</span> <span class="nav-text">发展历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E5%90%84%E7%89%88%E6%9C%AC%E5%92%8C%E4%BD%93%E7%B3%BB%E6%9E%B6%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">Java各版本和体系架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM-Java-VIRTUAL-MACHINE"><span class="nav-number">4.</span> <span class="nav-text">JVM(Java VIRTUAL MACHINE)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM%E5%92%8CJava%E8%B7%A8%E5%B9%B3%E5%8F%B0%E7%89%B9%E6%80%A7"><span class="nav-number">5.</span> <span class="nav-text">JVM和Java跨平台特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E7%9A%84%E7%89%B9%E7%82%B9"><span class="nav-number">6.</span> <span class="nav-text">Java的特点</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yingyi.ma</p>
+  <div class="site-description" itemprop="description">小森林之主</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:yingyi.ma@aliyun.com" title="E-Mail → mailto:yingyi.ma@aliyun.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/06/java%E7%AE%80%E5%8F%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yingyi.ma">
+      <meta itemprop="description" content="小森林之主">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Little Forest">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java简史
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-09-06 00:00:00 / 修改时间：22:20:22" itemprop="dateCreated datePublished" datetime="2021-09-06T00:00:00+08:00">2021-09-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h3 id="java简史"><a href="#java简史" class="headerlink" title="java简史"></a>java简史</h3><ul>
+<li><p>SUN公司是一家什么样的公司?</p>
+<p>  – 美国SUN(Stanford University Network)公司</p>
+<p>  – 在中国大陆的正式中文名为“太阳计算机系统（中国）有限公司”</p>
+<p>  – 在台湾中文名为“升 阳电脑公司”。</p>
+<span id="more"></span></li>
+<li><p>Java为什么被发明?</p>
+<p>  – Green项目。</p>
+<p>  – 应用环境：像电视盒这样的消费类电子产品</p>
+<p>  – 要求： ▪ 语言本身是中立的，也就是跨平台</p>
+</li>
+<li><p>Java的发明人?</p>
+<p>  – James Gosling</p>
+</li>
+</ul>
+<h3 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史"></a>发展历史</h3><ul>
+<li>1991年，Sun公司的Green项目，Oak</li>
+<li>1995年，推出Java测试版</li>
+<li>1996年，JDK1.0</li>
+<li>1997年，JDK1.1</li>
+<li>1998年，JDK1.2，大大改进了早期版本的缺陷，是一个革命性的版本，更名为Java2</li>
+<li>1999 Java被分成J2SE、J2EE 和J2ME，JSP/Servlet技术诞生</li>
+<li>2004年，J2SE 5.0 (1.5.0) Tiger老虎.为了表示这个版本的重要性，J2SE1.5更名为J2SE5.0。</li>
+<li>2006年，J2SE 6.0 (1.6.0) Mustang野马.此时，Java的各种版本被更名，取消其中的数字”2”：J2EE更名为Java EE, J2SE更名为<br>Java SE，J2ME更名为Java ME</li>
+<li>2009年4月20日甲骨文收购Sun公司，交易价格达74亿美元</li>
+<li>2011年，JavaSE7.0</li>
+<li>2014年 ，JavaSE8.0</li>
+<li>2017年，JavaSE9.0</li>
+<li>2018年3月，JavaSE10.0</li>
+<li>2018年9月，JavaSE11.0</li>
+<li>2019年3月，JavaSE12.</li>
+</ul>
+<h3 id="Java各版本和体系架构"><a href="#Java各版本和体系架构" class="headerlink" title="Java各版本和体系架构"></a>Java各版本和体系架构</h3><ul>
+<li>J2EE （JavaEE）</li>
+</ul>
+<p>– Java 2 Enterprise Edition：</p>
+<p>– 定位在服务器端的应用</p>
+<ul>
+<li>J2SE (JavaSE)</li>
+</ul>
+<p>– Java 2 Standard Edition</p>
+<p>– 定位在个人计算机上的应用</p>
+<ul>
+<li>J2ME (JavaME)</li>
+</ul>
+<p>– Java 2 Micro Edition</p>
+<p>– 定位在消费性电子产品的应用上</p>
+<h3 id="JVM-Java-VIRTUAL-MACHINE"><a href="#JVM-Java-VIRTUAL-MACHINE" class="headerlink" title="JVM(Java VIRTUAL MACHINE)"></a>JVM(Java VIRTUAL MACHINE)</h3><ul>
+<li><p>JVM是一种规范。就是一个虚拟的用 于执行bytecodes字节码的计算机。</p>
+</li>
+<li><p>Java虚拟机是Java最核心技术，也是跨 平台的基础。</p>
+</li>
+<li><p>可以使用软件来实现</p>
+<p>  – IBM, SUN, BEA等。你也可以自己 写一个JVM</p>
+</li>
+<li><p>可以使用硬件来实现</p>
+<p>  – 比如sun/intel公司正在研发的Java 芯片</p>
+</li>
+</ul>
+<h3 id="JVM和Java跨平台特性"><a href="#JVM和Java跨平台特性" class="headerlink" title="JVM和Java跨平台特性"></a>JVM和Java跨平台特性</h3><ul>
+<li><p>通过“编译器”将Java源程序编译成Java 字节码文件（.class） (字节码文件采用结构中立的中间文件格式)</p>
+</li>
+<li><p>通过“解释器”将Java字节码文件解释为对应机器语言并运行</p>
+</li>
+<li><p>Java和C跨平台原理的比较</p>
+<p> – Java：一次编译，到处运行</p>
+<p> – C：多次编译，到处运行</p>
+</li>
+</ul>
+<h3 id="Java的特点"><a href="#Java的特点" class="headerlink" title="Java的特点"></a>Java的特点</h3><ul>
+<li>Java是跨平台的</li>
+<li>Java是简单的 </li>
+<li>Java是安全的</li>
+<li>Java是完全面向对象的</li>
+<li>Java是健壮的</li>
+</ul>
+<ul>
+<li>Java是跨平台的</li>
+</ul>
+<p>Java程序的跨平台主要是指字节码文件可以在任何具有Java虚拟机的计算机或者电子设备上运行，Java虚拟机中的Java解释器负责将字节码文件解释成为特定的机器码进行运行。</p>
+<ul>
+<li>Java是简单的</li>
+</ul>
+<p>– 不再有#include 和#define 等预处理功能</p>
+<p>– 不再有struct,union及typedef</p>
+<p>– 不再有函数、</p>
+<p>– 不再有指针、不再有多重继承</p>
+<p>– 不再有goto</p>
+<p>– 不再有操作符重载(Operatior Overloading)</p>
+<p>– 不再有全局变量 取消自动类型转换,要求强制转换</p>
+<p>– 不再有手动内存管理</p>
+<ul>
+<li>Java是安全的</li>
+</ul>
+<p>–Java取消了强大但又危险的指针。由于指针可进行移动运算，指针可随便指向 一个内存区域，而不管这个区域是否可用，这样做是危险的，因为原来这个内 存地址可能存储着重要数据或者是其他程序运行所占用的， 并且使用指针也容 易数组越界。</p>
+<p>–Java提供了自动内存管理机制，由垃圾回收器在后台自动回收,</p>
+<p>–Java在字节码的传输过程中使用了公开密钥加密机制(PKC)。</p>
+<p>–而在运行环境提供了四级安全性保障机制： 字节码校验器 -类装载器 -运行时内存布局 -文件访问限制</p>
+<ul>
+<li>Java是完全面向对象的</li>
+</ul>
+<p>– Java和C++都是面向对象语言。也就是说，它们都能够实现面向对 象思想（封装，继承，多态）。</p>
+<p>– 由于C++为了照顾大量C语言使用者而兼容了C，使得自身仅仅成为 了带类的C语言，多少影响了其面向对象的彻底性！</p>
+<p>– Java则是完全的面向对象语言，它句法更清晰，规模更小，更易学。 它是在对多种程序设计语言进行了深入细致研究的基础上，据弃了其 他语言的不足之处，从根本上解决了c++的固有缺陷。</p>
+<ul>
+<li>Java是健壮的</li>
+</ul>
+<p>– Java的强制类型机制、异常处理、垃圾的自动收集等是Java程 序健壮性的重要保证。</p>
+<p>– 对指针的丢弃是Java的明智选择。</p>
+<p>– Java的安全检查机制使得Java更具健壮性。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/09/06/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6/" rel="prev" title="数据类型和运算符">
+                  <i class="fa fa-chevron-left"></i> 数据类型和运算符
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yingyi.ma</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
