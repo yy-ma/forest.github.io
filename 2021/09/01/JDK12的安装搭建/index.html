@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="JDK12的安装搭建一、JDK下载​        1、JDK官网下载地址：https:&#x2F;&#x2F;www.oracle.com&#x2F;technetwork&#x2F;java&#x2F;javase&#x2F;downloads&#x2F;jdk12-downloads-5295953.html​        2、选择：“Accept License Agreement”        3、下载的文件：jdk-12.0.1_windows-x6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDK12的安装搭建">
+<meta property="og:url" content="http://example.com/2021/09/01/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:site_name" content="Little Forest">
+<meta property="og:description" content="JDK12的安装搭建一、JDK下载​        1、JDK官网下载地址：https:&#x2F;&#x2F;www.oracle.com&#x2F;technetwork&#x2F;java&#x2F;javase&#x2F;downloads&#x2F;jdk12-downloads-5295953.html​        2、选择：“Accept License Agreement”        3、下载的文件：jdk-12.0.1_windows-x6">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/jdk12%E4%B8%8B%E8%BD%BD.png">
+<meta property="og:image" content="http://example.com/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%851.png">
+<meta property="og:image" content="http://example.com/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%852.png">
+<meta property="og:image" content="http://example.com/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%853.png">
+<meta property="og:image" content="http://example.com/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/jdk%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95.png">
+<meta property="og:image" content="http://example.com/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%85jre.png">
+<meta property="og:image" content="http://example.com/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%85jre%E5%90%8E%E7%9A%84%E7%9B%AE%E5%BD%95.png">
+<meta property="og:image" content="http://example.com/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F1.png">
+<meta property="og:image" content="http://example.com/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F2.png">
+<meta property="og:image" content="http://example.com/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E6%A3%80%E6%B5%8Bjdk%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png">
+<meta property="article:published_time" content="2021-08-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-06T03:39:21.775Z">
+<meta property="article:author" content="Yingyi.ma">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/jdk12%E4%B8%8B%E8%BD%BD.png">
+
+
+<link rel="canonical" href="http://example.com/2021/09/01/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/01/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/","path":"2021/09/01/JDK12的安装搭建/","title":"JDK12的安装搭建"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>JDK12的安装搭建 | Little Forest</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Little Forest</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">(,,･∀･)ﾉ゛hello</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA"><span class="nav-number">1.</span> <span class="nav-text">JDK12的安装搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81JDK%E4%B8%8B%E8%BD%BD"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、JDK下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81JDK%E5%AE%89%E8%A3%85"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、JDK安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、配置环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">1.0.4.</span> <span class="nav-text">四、配置环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E8%BF%9B%E5%85%A5%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE%E7%95%8C%E9%9D%A2"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">1.进入环境变量配置界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-number">1.0.4.2.</span> <span class="nav-text">2.添加环境变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A"><span class="nav-number">1.0.5.</span> <span class="nav-text">注意：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%A3%80%E6%9F%A5JDK%E9%85%8D%E7%BD%AE"><span class="nav-number">1.0.6.</span> <span class="nav-text">五、检查JDK配置</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yingyi.ma</p>
+  <div class="site-description" itemprop="description">小森林之主</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:yingyi.ma@aliyun.com" title="E-Mail → mailto:yingyi.ma@aliyun.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/01/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yingyi.ma">
+      <meta itemprop="description" content="小森林之主">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Little Forest">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JDK12的安装搭建
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-09-01 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-01T00:00:00+08:00">2021-09-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-09-06 11:39:21" itemprop="dateModified" datetime="2021-09-06T11:39:21+08:00">2021-09-06</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="JDK12的安装搭建"><a href="#JDK12的安装搭建" class="headerlink" title="JDK12的安装搭建"></a>JDK12的安装搭建</h1><h3 id="一、JDK下载"><a href="#一、JDK下载" class="headerlink" title="一、JDK下载"></a>一、JDK下载</h3><p>​        1、JDK官网下载地址：<a target="_blank" rel="noopener" href="https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html">https://www.oracle.com/technetwork/java/javase/downloads/jdk12-downloads-5295953.html</a><br>​        2、选择：“Accept License Agreement”<br>        3、下载的文件：jdk-12.0.1_windows-x64_bin.exe</p>
+<p><img src="/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/jdk12%E4%B8%8B%E8%BD%BD.png" alt="jdk12下载"></p>
+<span id="more"></span>
+<h3 id="二、JDK安装"><a href="#二、JDK安装" class="headerlink" title="二、JDK安装"></a>二、JDK安装</h3><p>​        1、点击 “jdk-12.0.1_windows-x64_bin.exe”弹出安装向导页面，点击“下一步”；</p>
+<p><img src="/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%851.png" alt="安装1"></p>
+<p>​        2、可自定义选择将JDK安装在目标文件夹（默认即可），选择“下一步”；</p>
+<p><img src="/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%852.png" alt="安装2"></p>
+<p>​        3、选择“关闭”</p>
+<p><img src="/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%853.png" alt="安装3"></p>
+<h3 id="三、配置环境变量"><a href="#三、配置环境变量" class="headerlink" title="三、配置环境变量"></a>三、配置环境变量</h3><p>​    1、安装前JDK目录下是这个样子的：</p>
+<p><img src="/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/jdk%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95.png" alt="jdk安装目录"></p>
+<p>​    2、生成JRE:电脑安装JDK12后，发现新版的JDK12安装完成后没有JRE，运行一下命令，生成JRE： bin\jlink.exe –module-path jmods –add-modules java.desktop –output jre 命令手动生成jre。</p>
+<p><img src="/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%85jre.png" alt="安装jre"></p>
+<p>​    3、安装后JDK目录下是这个样子的：</p>
+<p><img src="/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E5%AE%89%E8%A3%85jre%E5%90%8E%E7%9A%84%E7%9B%AE%E5%BD%95.png" alt="安装jre后的目录"></p>
+<p>​    4、注意：</p>
+<p>​    （1）运行上面生成JRE的命令的时候，CMD窗口路径显示的为: C:\Program Files\Java\jdk-12.0.1&gt;: ，运行的命令为：bin\jlink.exe –module-path jmods –add-modules java.desktop –output jre，运行 的位置和路径一定要一致。</p>
+<p>​    （2）在启动cmd命令行的时候最好使用管理员的身份运行。</p>
+<h3 id="四、配置环境变量"><a href="#四、配置环境变量" class="headerlink" title="四、配置环境变量"></a>四、配置环境变量</h3><h4 id="1-进入环境变量配置界面"><a href="#1-进入环境变量配置界面" class="headerlink" title="1.进入环境变量配置界面"></a>1.进入环境变量配置界面</h4><ul>
+<li>方法1：右键点击计算机–&gt;属性–&gt;高级系统设置–&gt;高级–&gt;环境变量</li>
+<li>方法2：win+ R –&gt; 输入 sysdm.cpl 并回车 –&gt; 高级 –&gt; 环境变量</li>
+</ul>
+<h4 id="2-添加环境变量"><a href="#2-添加环境变量" class="headerlink" title="2.添加环境变量"></a>2.添加环境变量</h4><table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>变量值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>JAVA_HOME</td>
+<td>C:\Program Files\Java\jdk-12</td>
+</tr>
+<tr>
+<td>Path</td>
+<td>%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;</td>
+</tr>
+</tbody></table>
+<h3 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h3><p>​        1、”C:\Program Files\Java\jdk-12”该文件夹地址是JDK安装位置<br>​        2、从JDK 9开始发生重大变化 - - - “之前类和资源文件存储在lib/rt.jar， tools.jar，JDK 9版本开始 lib/dt.jar和其他各种内部JAR文件都存储在一个更有效的格式在实现特定的文件lib目录。所以不需要配置CLASSPASTH变量。”</p>
+<p><img src="/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F1.png" alt="环境变量1"></p>
+<p><img src="/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F2.png" alt="环境变量2"></p>
+<h3 id="五、检查JDK配置"><a href="#五、检查JDK配置" class="headerlink" title="五、检查JDK配置"></a>五、检查JDK配置</h3><p>​    键盘 “Win+R” 快捷键键调出“运行”，输入“cmd”，在命令提示符输入“java -version”</p>
+<p><img src="/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/%E6%A3%80%E6%B5%8Bjdk%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E6%88%90%E5%8A%9F.png" alt="检测jdk是否安装成功"></p>
+<p>​    以上步骤完成就成功搭建JDK的安装及环境变量了！！！</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/09/02/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="next" title="lambda表达式的使用">
+                  lambda表达式的使用 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yingyi.ma</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
