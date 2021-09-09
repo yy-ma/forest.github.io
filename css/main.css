@@ -1736,6 +1736,7 @@ pre code {
   color: #ff0000;
   display: inline-block;
   margin: 0 5px;
+  animation: icon-animate 1.33s ease-in-out infinite;
 }
 @-moz-keyframes icon-animate {
   0%, 100% {
@@ -2769,7 +2770,7 @@ ul.breadcrumb li:last-child {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #fcf;
+  background: #09ff3d;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
