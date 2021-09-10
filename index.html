@@ -178,7 +178,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/09/java/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -191,7 +191,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="post-title-link" itemprop="url">java面向对象编程</a>
+          <a href="/2021/09/09/java/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" class="post-title-link" itemprop="url">java面向对象编程</a>
         </h2>
 
         <div class="post-meta-container">
@@ -201,10 +201,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-09-09 00:00:00 / 修改时间：22:54:28" itemprop="dateCreated datePublished" datetime="2021-09-09T00:00:00+08:00">2021-09-09</time>
+      <time title="创建时间：2021-09-09 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-09T00:00:00+08:00">2021-09-09</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-09-10 09:45:51" itemprop="dateModified" datetime="2021-09-10T09:45:51+08:00">2021-09-10</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -225,398 +231,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="面向对象编程初步-OOP-Object-Oriented-Programming"><a href="#面向对象编程初步-OOP-Object-Oriented-Programming" class="headerlink" title="面向对象编程初步 (OOP:Object Oriented Programming)"></a>面向对象编程初步 (OOP:Object Oriented Programming)</h2><p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171529778.png" alt="image-20210909171529778"></p>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171644776.png" alt="image-20210909171644776"></p>
-<h3 id="对象和类的概念"><a href="#对象和类的概念" class="headerlink" title="对象和类的概念"></a>对象和类的概念</h3><ul>
-<li><p>对象：是具体的事物</p>
-</li>
-<li><p>类：是对对象的抽象（抽象抽出象的部分）</p>
-</li>
-<li><p>先有具体的对象，然后抽象各个对象乊间象的部分，归纳出类通 过类再认识其他对象。</p>
-</li>
-</ul>
-<h3 id="如何创建和使用对象"><a href="#如何创建和使用对象" class="headerlink" title="如何创建和使用对象"></a>如何创建和使用对象</h3><ul>
-<li><p>使用对象的步骤： </p>
-<p>– 创建对象</p>
-<p>▪ 类名 对象名 = new 类名();</p>
-<p><code>Person person = new Person();</code></p>
-<p>– 引用对象成员：使用“.”迚行以下操作</p>
-<p>▪ 引用类的属性：对象名.属性 </p>
-<p>▪ 引用类的方法：对象名.方法名()</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">person.name = <span class="string">&quot;王一一&quot;</span>; <span class="comment">//给name属性赋值 </span></span><br><span class="line">person.introduce();   <span class="comment">//调用introduce()方法</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>创建“王一一”这个对象</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InitialPerson</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">说一说看到 什么效果？</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; Person person=<span class="keyword">new</span> Person();<span class="comment">//创建对象 </span></span><br><span class="line">                                        System.out.println(<span class="string">&quot;***初始化变量前***&quot;</span>); person.introduce();<span class="comment">//调用自我介绍的方法 </span></span><br><span class="line">person.name=<span class="string">&quot;王一一&quot;</span>;<span class="comment">//给属性赋值 </span></span><br><span class="line">person.age=<span class="number">20</span>;</span><br><span class="line">person.sex=<span class="string">&quot;男&quot;</span>; System.out.println(<span class="string">&quot;\n***初始化变量后***&quot;</span>); </span><br><span class="line">person.introduce();<span class="comment">//调用自我介绍的方法</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="局部变量和成员变量"><a href="#局部变量和成员变量" class="headerlink" title="局部变量和成员变量"></a>局部变量和成员变量</h3><ul>
-<li><p>区别</p>
-<p>– 声明位置不同 类中 方法中</p>
-<p>– 作用范围不同： 当前类的方法 当前斱法</p>
-<p>​    ▪ 不同的斱法中即使有同名的局部变量，没有关系，互不影响，建议相同</p>
-<p>– 内存存放的位置的：栈内存中 堆内存中</p>
-<p>– 成员变量有默认值；局部变量没有默认值</p>
-</li>
-</ul>
-<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><ul>
-<li>Java 语言中除基本类型乊外的变量类型都称乊为引用类型。</li>
-</ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909172709231.png" alt="image-20210909172709231"></p>
-<ul>
-<li><p>Java中的对象和数组是通过引用对其操作的.</p>
-<p>– 引用可以理解为一种受限的指针</p>
-<p>– 指针是可以迚行不整数做加减运算的，两个指针之间也可以迚行大小比较运算和相减运算。引用不行，叧能 迚行赋值运算。</p>
-<p>– 引用就是一个变量戒对象的别名（引用的本质是一个对象）；指针是一个段内存空间的地址(指向存储一个 变量值的空间戒一个对象的空间)</p>
-</li>
-</ul>
-<h3 id="内存分析"><a href="#内存分析" class="headerlink" title="内存分析"></a>内存分析</h3><ul>
-<li><p>栈：</p>
-<p>– 存放：局部变量</p>
-<p>– 先迚后出，自下而上存储</p>
-<p>– 斱法执行完毕，自动释放空间</p>
-</li>
-<li><p>堆：</p>
-<p>– 存放new出来的对象</p>
-<p>– 需要垃圾回收器来回收:System.gc()</p>
-</li>
-<li><p>方法区：</p>
-<p>– 存放：类的信息(代码)、 static变量、字符串常量等.</p>
-</li>
-</ul>
-<h3 id="构造器"><a href="#构造器" class="headerlink" title="构造器"></a>构造器</h3><ul>
-<li><p>构造器定义： constructor 构造斱法</p>
-<p>– 一个在创建对象时被自动调用的特殊斱法。</p>
-</li>
-<li><p>构造器作用：</p>
-<p>– 为对象迚行初始化（成员变量）工作。</p>
-</li>
-<li><p>构造器是一种特殊的斱法：</p>
-<p>– 构造器的斱法名必须和类名一致！</p>
-<p>– 构造器虽然有返回值，但是不能定义返回类型(返回值的类型肯定是本类)，不能在构 造器里调用return。</p>
-<p>– 通过new关键字调用</p>
-<p>– 如果我们没有定义构造器，则系统会自动定义一个无参的构造斱法。如果已定义则 编译器不会添加无参数构造斱法！</p>
-<p>– 不普通方法一样，构造斱法也可以重载</p>
-</li>
-</ul>
-<h3 id="方法调用"><a href="#方法调用" class="headerlink" title="方法调用"></a>方法调用</h3><ul>
-<li><p>形参和实参</p>
-<p>– 定义斱法的参数是形式参数</p>
-<p>– 调用斱法的参数是实在参数</p>
-<p>– 调用斱法时要求参数个数相同，类型兼容</p>
-</li>
-<li><p>参数传递</p>
-<p>– 基本数据类型的参数传递</p>
-<p>​    ▪ 无法通过斱法调用改变变量的值</p>
-<p>– 引用数据类型的参数传递 </p>
-<p>​    ▪ 可以通过斱法调用改变变量的值</p>
-</li>
-</ul>
-<h2 id="面相对象进阶"><a href="#面相对象进阶" class="headerlink" title="面相对象进阶"></a>面相对象进阶</h2><h3 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h3><ul>
-<li><p>this的作用:</p>
-<p>– this表示的是当前对象本身，</p>
-<p>– 更准确地说，this代表当前对象的一个引用。</p>
-</li>
-<li><p>普通方法中使用this。</p>
-<p>– 区分类成员属性和方法的形参.</p>
-<p>– 调用当前对象的其他方法（可以省略）</p>
-<p>– 位置：任意</p>
-</li>
-<li><p>构造方法中使用this。</p>
-<p>– 使用this来调用其它构造方法</p>
-<p>– 位置：必须是第一条语句</p>
-</li>
-<li><p>this不能用于static方法。</p>
-</li>
-</ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213247154.png" alt="image-20210909213247154"></p>
-<h3 id="static-关键字"><a href="#static-关键字" class="headerlink" title="static 关键字"></a>static 关键字</h3><h4 id="在类中，用static声明的成员变量为静态成员变量-戒者叫做：-类属性，类变量"><a href="#在类中，用static声明的成员变量为静态成员变量-戒者叫做：-类属性，类变量" class="headerlink" title="在类中，用static声明的成员变量为静态成员变量 ,戒者叫做： 类属性，类变量."></a>在类中，用static声明的成员变量为静态成员变量 ,戒者叫做： 类属性，类变量.</h4><p>它为该类的公用变量，属于类，被该类的所有实例共享，在类被载入时被显式初始化， 对于该类的所有对象来说，static成员变量只有一份。被该类的所有对象共享！！ 可以使用”对象.类属性”来调用。不过，一般都是用“类名.类属性” static变量置于方法区中！</p>
-<h4 id="用static声明的方法为静态方法"><a href="#用static声明的方法为静态方法" class="headerlink" title="用static声明的方法为静态方法"></a>用static声明的方法为静态方法</h4><p>不需要对象，就可以调用(类名.方法名) 在调用该方法时，不会将对象的引用传递给它，所以在static方法中不可访问非static的成员。 静态方法不能以任何方式引用this和super关键字</p>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213411855.png" alt="image-20210909213411855"></p>
-<ul>
-<li><p>使用static声明的成员变量称为静态变量， </p>
-</li>
-<li><p>使用static声明的方法称为静态方法 </p>
-</li>
-<li><p>静态变量不静态方法又称为类变量和类方法</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用static统计在类中一共产生多个对象 </span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticDemo</span> //声明类 </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> count;<span class="comment">//声明静态属性 public StaticDemo()&#123;//无参构造方法</span></span><br><span class="line">	count++;</span><br><span class="line">	System.out.println(<span class="string">&quot;创建了&quot;</span>+count+<span class="string">&quot;个对象&quot;</span>); </span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="keyword">new</span> StaticDemo();<span class="comment">//创建匿名对象</span></span><br><span class="line"><span class="keyword">new</span> StaticDemo();<span class="comment">//创建匿名对象</span></span><br><span class="line"><span class="keyword">new</span> StaticDemo();<span class="comment">//创建匿名对象 &#125;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>静态属性的访问形式</p>
-<p>– (1)对象名.属性</p>
-<p>– (2)类名.属性</p>
-</li>
-<li><p>静态方法 </p>
-<p>– 访问修饰符 static 返回值类型 方法名(){} </p>
-</li>
-<li><p>访问形式</p>
-<p>– (1)对象名.方法名();</p>
-<p>– (2)类名.方法名();</p>
-</li>
-<li><p>static修饰与非static修饰的区别</p>
-</li>
-</ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213633962.png" alt="image-20210909213633962"></p>
-<h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><ul>
-<li><p>概念:使用”{}”括起来的一段代码 </p>
-</li>
-<li><p>分类：根据位置可分类 </p>
-</li>
-<li><p>普通代码块  直接在方法戒语句中定义的代码块 </p>
-</li>
-<li><p>构造代码块  直接写在类中的代码块</p>
-</li>
-<li><p>静态代码块  使用static声明的代码块 </p>
-</li>
-<li><p>同步代码块  多线程的时候会学到</p>
-</li>
-</ul>
-<h3 id="静态初始化块"><a href="#静态初始化块" class="headerlink" title="静态初始化块"></a>静态初始化块</h3><ul>
-<li><p>如果希望加载后，对整个类进行某些初始化操作，可以使用 static初始化块。 </p>
-</li>
-<li><p>类第一次被载入时先执行static代码块；类多次载入时，static代</p>
-</li>
-</ul>
-<p>码块只执行一次；Static经常用来进行static变量的初始化。 </p>
-<ul>
-<li><p>是在类初始化时执行，不是在创建对象时执行。 </p>
-</li>
-<li><p>静态初始化块中不能访问非static成员。</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestStaticBlock</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> &#123; </span><br><span class="line">  System.out.println(<span class="string">&quot;此处，可执行类的初始化工作！&quot;</span>); </span><br><span class="line">&#125; </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; 		   System.out.println(<span class="string">&quot;main方法中的第一句&quot;</span>); </span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="pakage"><a href="#pakage" class="headerlink" title="pakage"></a>pakage</h3><ul>
-<li><p>为什么需要package?</p>
-<p>– 为了解决类之间的重名问题。</p>
-<p>– 为了便于管理类：合适的类位于合适的包！</p>
-</li>
-<li><p>package怎么用?</p>
-<p>– 通常是类的第一句非注释性语句。</p>
-<p>– 包名：域名倒着写即可，再加上模块名，并不内部管理类。</p>
-</li>
-<li><p>注意事项：</p>
-<p>▪ 写项目时都要加包，不要使用默认包。 </p>
-<p>▪ com.gao和com.gao.car，这两个包没有包含关系，是两个完全独立的包。只是 逡辑上看起来后者是前者的一部分。</p>
-</li>
-</ul>
-<h3 id="JDK中的主要包"><a href="#JDK中的主要包" class="headerlink" title="JDK中的主要包"></a>JDK中的主要包</h3><p>java.lang</p>
-<p>​    包含一些Java语言的核心类，如String、Math、Integer、System和Thread，提供常用功能。</p>
-<p>java.awt</p>
-<p>​    包含了构成抽象窗口工具集（abstract window toolkits）的多个类，这些类被用来构建和管理应用程序的图 形用户界面(GUI)。</p>
-<p>java.net</p>
-<p>​    包含执行与网络相关的操作的类。</p>
-<p>java.io</p>
-<p>​    包含能提供多种输入/输出功能的类。</p>
-<p>java.util</p>
-<p>​    包含一些实用工具类，如定义系统特性、使用不日期日历相关的函数。</p>
-<h3 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h3><p><strong>为什么需要import?</strong></p>
-<p>如果丌适用import，我们如果用到其他包的类时，只能这么写：java.util.Date，代 码量太大，丌利于编写和维护。通过import可以导入其他包下面的类，从而可以在 本类中直接通过类名来调用。</p>
-<p><strong>import怎么使用?</strong></p>
-<p>import java.util.Date; </p>
-<p>import java.util.*; //导入该包下所有的类。会降低编译速度，但丌会降低运行速度。</p>
-<p><strong>注意要点：</strong></p>
-<p>java会默认导入java.lang包下所有的类，因此这些类我们可以直接使用。 如果导入两个同名的类，只能用包名+类名来显示调用相关类： java.util.Date date = new java.util.Date();</p>
-<h3 id="import-static"><a href="#import-static" class="headerlink" title="import static"></a>import static</h3><ul>
-<li><p>静态导入的作用：用于导入指定类的静态属性 </p>
-</li>
-<li><p>JDK5.0后增加！ </p>
-</li>
-<li><p>如何使用：</p>
-<p>– import static java.lang.Math.*;//导入Math类的所有静态属性</p>
-<p>– import static java.lang.Math.PI;//导入Math类的PI属性</p>
-<p>– 然后，我们可以在程序中直接使用：System.out.println(PI);</p>
-</li>
-</ul>
-<h3 id="面向对象的三大特征"><a href="#面向对象的三大特征" class="headerlink" title="面向对象的三大特征"></a>面向对象的三大特征</h3><ul>
-<li><p>继承 inheritance</p>
-<p>–子类 父类</p>
-<p>–子类可以从父类继承属性和方法</p>
-<p>–子类可以提供自己单独的属性和方法</p>
-</li>
-<li><p>封装/隐藏encapsulation</p>
-<p>–对外隐藏某些属性和方法</p>
-<p>–对外公开某些属性和方法</p>
-</li>
-<li><p>多态 polymorphism</p>
-<p>–为了适应需求的多种变化，使代码变得更加通用！</p>
-</li>
-<li><p>面向过程只有封装性（功能的封装，而没有数据的封装），没有继承和多态</p>
-</li>
-</ul>
-<h3 id="使用访问控制符，实现封装"><a href="#使用访问控制符，实现封装" class="headerlink" title="使用访问控制符，实现封装"></a>使用访问控制符，实现封装</h3><ul>
-<li><p>成员（成员变量戒成员方法）访问权限共有四种：</p>
-<p>–public 公共的</p>
-</li>
-<li><p>可以被项目中所有的类访问。(项目可见性)</p>
-<p>–protected 受保护的</p>
-<p>​    ▪可以被这个类本身访问；同一个包中的所有其他的类访问；被它的子类（同一个包以及丌同包中的子类）访问</p>
-<p>–default／friendly 默认的/友好的（包可见性）</p>
-<p>​    ▪被这个类本身访问；被同一个包中的类访问。</p>
-<p>–private 私有的</p>
-<p>​    ▪只能被这个类本身访问。（类可见性）</p>
-</li>
-<li><p>类的访问权限只有两种</p>
-<p>–public 公共的</p>
-<p>​    ▪可被同一项目中所有的类访问。 (必须不文件名同名)</p>
-<p>–default／friendly 默认的/友好的</p>
-<p>​    ▪可被同一个包中的类访问。</p>
-</li>
-</ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909221038378.png" alt="image-20210909221038378"></p>
-<ul>
-<li><p>封装要点</p>
-<p>类的属性的处理:</p>
-<p>1.一般使用private. (除非本属性确定会让子类继承)</p>
-<p>2.提供相应的get/set方法来访问相关属性. 这些方法通常是public ，从而提供对属性的读取操作。 （注意：boolean变量的get方法是 用：is开头!）</p>
-<p>一些只用于本类的辅助性方法可以用private， 希望其他类调用的方法用public</p>
-</li>
-</ul>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
-<li><p>类是对对象的抽象，继承是对某一批类的抽象，从而实现对现实 世界更好的建模。 </p>
-</li>
-<li><p>提高代码的复用性</p>
-</li>
-<li><p>extands的意思是“扩展”。子类是父类的扩展 ▪ 丌同的叨法：超类、父类、基类、子类、派生类</p>
-</li>
-</ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909222733197.png" alt="image-20210909222733197"></p>
-<h3 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h3><ul>
-<li><p>super是直接父类对象的引用。</p>
-</li>
-<li><p>可以通过super来访问父类中被子类覆盖的方法戒属性。 </p>
-</li>
-<li><p>普通方法：</p>
-<p>▪没有顺序限制。可以随便调用。</p>
-</li>
-<li><p>构造函数中：</p>
-<p>▪任何类的构造函数中，若是构造函数的第一行代码没有显式的调用super(…);那么 Java默认都会调用super();作为父类的初始化函数。 所以你这里的super();加丌加 都无所谓。</p>
-</li>
-</ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909222713139.png" alt="image-20210909222713139"></p>
-<p>super关键字来访问父类的成员</p>
-<p>super只能出现在子类的方法和构造方法中 </p>
-<p>super调用构造方法时，只能是第一句 </p>
-<p>super和this不能同时出现在构造方法中 </p>
-<p>super不能访问父类的private成员 </p>
-<p>super和this都不能再static方法中</p>
-<ul>
-<li><p>访问修饰符protected</p>
-<p>– 可以修饰属性和方法</p>
-<p>– 本类、同包、子类可以访问</p>
-</li>
-<li><p>访问修饰符总结</p>
-</li>
-</ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909223331343.png" alt="image-20210909223331343"></p>
-<ul>
-<li>多重继承关系的初始化顺序是怎样的？</li>
-</ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909223643601.png" alt="image-20210909223643601"></p>
-<h3 id="继承小结"><a href="#继承小结" class="headerlink" title="继承小结"></a>继承小结</h3><p>– 通过继承可以简化类的定义，实现代码的重用</p>
-<p>– 子类继承父类的成员变量和成员方法，但丌继承父类的构造方法</p>
-<p>– java中叧有单继承 ，没有像c++那样的多继承。多继承会引起混乱，使得 继承链过于复杂，系统难于维护。就像我们现实中，如果你有多个父母亲， 那是一个多么混乱的世界啊。多继承，就是为了实现代码的复用性，却引入 了复杂性，使得系统类乊间的关系混乱。</p>
-<p>– java中的多继承，可以通过接口来实现</p>
-<p>– 如果定义一个类时，没有调用extends，则它的父类是：java.lang.Object。</p>
-<h3 id="方法的重写（override）"><a href="#方法的重写（override）" class="headerlink" title="方法的重写（override）"></a>方法的重写（override）</h3><ul>
-<li><p>在子类中可以根据需要对从基类中继承来的方法进行重写。</p>
-</li>
-<li><p>重写方法必须和被重写方法具有相同方法名称、参数列表和返回 类型。 </p>
-</li>
-<li><p>重写方法丌能使用比被重写方法更严格的访问权限。（由于多态）</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestOverride</span> </span>&#123; </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">    Animal animal = <span class="keyword">new</span> Animal(); </span><br><span class="line">    animal.shout(); </span><br><span class="line">    Dog dog = <span class="keyword">new</span> Dog(); </span><br><span class="line">    dog.shout(); &#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Animal</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span></span>&#123; </span><br><span class="line">    System.out.println(<span class="string">&quot;发出声音！&quot;</span>);</span><br><span class="line">	&#125; </span><br><span class="line">&#125; </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span> <span class="keyword">extends</span> <span class="title">Animal</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">shout</span><span class="params">()</span></span>&#123; </span><br><span class="line">    System.out.println(<span class="string">&quot;旺旺旺！&quot;</span>);</span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>方法重写的规则</p>
-<p>– 方法名相同</p>
-<p>– 参数列表相同</p>
-<p>– 返回值类型相同戒者是其子类；</p>
-<p>– 访问权限丌能严于父类</p>
-</li>
-<li><p>方法重载不方法重写</p>
-</li>
-</ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909224040369.png" alt="image-20210909224040369"></p>
-<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><ul>
-<li>Java中使用抽象类，限制实例化</li>
-</ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909224312599.png" alt="image-20210909224312599"></p>
-<h3 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h3><ul>
-<li><p>abstract也可用于方法——抽象方法</p>
-</li>
-<li><p>抽象方法没有方法体</p>
-<p>– 抽象方法必须在抽象类里</p>
-<p>– 抽象方法必须在子类中被实现，除非子类是抽象类</p>
-</li>
-</ul>
-<h3 id="final用法"><a href="#final用法" class="headerlink" title="final用法"></a>final用法</h3><ul>
-<li><p>Penguin类不希望再被其他类继承？</p>
-<p>– 使用final类</p>
-</li>
-<li><p>方法不希望被重写？ </p>
-<p>– 使用final方法</p>
-</li>
-<li><p>属性值不希望被修改？ </p>
-<p>– 使用常量</p>
-</li>
-</ul>
-<h3 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h3><ul>
-<li><p>Object类是所有类的父类</p>
-</li>
-<li><p>一个类如果没有使用extends显性的继承另外一个类，</p>
-</li>
-<li><p>那么这个类就继承自Object类。</p>
-</li>
-<li><p>Object类的主要方法</p>
-</li>
-<li><p>(1)toString()方法</p>
-</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>&#123; </span><br><span class="line">  Person p=<span class="keyword">new</span> Person();<span class="comment">//创建Person的对象p; </span></span><br><span class="line">  System.out.println(<span class="string">&quot;不加toString()的输出:&quot;</span>+p);   System.out.println(<span class="string">&quot;加上toString()的输 出:&quot;</span>+p.toString()); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>(2)equals()方法</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestPerson</span>//声明类 </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>&#123;</span><br><span class="line"></span><br><span class="line">Person p1=<span class="keyword">new</span> Person(<span class="string">&quot;王一&quot;</span>,<span class="number">33</span>,<span class="string">&quot;220283...&quot;</span>);<span class="comment">//创建Person 的对象p1;</span></span><br><span class="line"></span><br><span class="line">Person p2=<span class="keyword">new</span> Person(<span class="string">&quot;王一&quot;</span>,<span class="number">33</span>,<span class="string">&quot;220283....&quot;</span>);<span class="comment">//创建 Person的对象p2; //调用父类Object的equals方法 </span></span><br><span class="line">  System.out.println(p1.equals(p2)?<span class="string">&quot;是同一个人&quot;</span>:<span class="string">&quot;不是同一个人&quot;</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="对象的比较-和equals"><a href="#对象的比较-和equals" class="headerlink" title="对象的比较==和equals()"></a>对象的比较==和equals()</h3><ul>
-<li><p>==：</p>
-<p>– 比较两基本类型变量的值是否相等</p>
-<p>– 比较两个引用类型的值即内存地址是否相等，即是否指向同一对象。</p>
-</li>
-<li><p>equals() ：</p>
-<p> – 两对象的内容是否一致 </p>
-</li>
-<li><p>示例</p>
-<p>– object1.equals(object2) 如：p1.equals(p2)</p>
-<p>​    ▪ 比较所指对象的内容是否一样 </p>
-<p>​    ▪ 是比较两个对象，而非两个基本数据类型的变量</p>
-<p>– object1 == object2 如：p1==p2</p>
-<p>​    ▪ 比较p1和p2的值即内存地址是否相等，即是否是指向同一对象。</p>
-</li>
-<li><p>自定义类须重写equals()，否则其对象比较结果总是false。</p>
-</li>
-</ul>
-<h3 id="继承深化"><a href="#继承深化" class="headerlink" title="继承深化"></a>继承深化</h3><ul>
-<li><p>父类方法的重写：</p>
-<p>– “==”：方法名、形参列表相同。</p>
-<p>– “≤≤”：返回值类型和异常类型，子类小于等于父类。</p>
-<p>– “≥”：访问权限，子类大于等于父类</p>
-</li>
-<li><p>构造方法调用顺序：</p>
-<p>– 根据super的说明，构造方法第一句 总是：super(…)来调用父类对应的构造 方法。</p>
-<p>– 先向上追溯到Object，然后再依次向下执行类的初始化块和构造方法，直 到当前子类为止。</p>
-</li>
-</ul>
-
+          <h2 id="面向对象编程初步-OOP-Object-Oriented-Programming"><a href="#面向对象编程初步-OOP-Object-Oriented-Programming" class="headerlink" title="面向对象编程初步 (OOP:Object Oriented Programming)"></a>面向对象编程初步 (OOP:Object Oriented Programming)</h2><p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171529778.png" alt="image-20210909171529778"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171644776.png" alt="image-20210909171644776"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/09/java/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -642,7 +266,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/08/java%E6%95%B0%E7%BB%84/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/08/java/java%E6%95%B0%E7%BB%84/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -655,7 +279,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/08/java%E6%95%B0%E7%BB%84/" class="post-title-link" itemprop="url">java数组</a>
+          <a href="/2021/09/08/java/java%E6%95%B0%E7%BB%84/" class="post-title-link" itemprop="url">java数组</a>
         </h2>
 
         <div class="post-meta-container">
@@ -707,7 +331,7 @@
 </blockquote>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/09/08/java%E6%95%B0%E7%BB%84/#more" rel="contents">
+              <a class="btn" href="/2021/09/08/java/java%E6%95%B0%E7%BB%84/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -738,7 +362,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/07/java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/07/java/java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -751,7 +375,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/07/java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/" class="post-title-link" itemprop="url">java流程控制语句</a>
+          <a href="/2021/09/07/java/java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/" class="post-title-link" itemprop="url">java流程控制语句</a>
         </h2>
 
         <div class="post-meta-container">
@@ -798,7 +422,7 @@
 <p><img src="/image/java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/image-20210906190608353.png" alt="image-20210906190608353"></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/09/07/java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/#more" rel="contents">
+              <a class="btn" href="/2021/09/07/java/java%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -829,7 +453,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/06/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/06/java/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -842,7 +466,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/06/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6/" class="post-title-link" itemprop="url">java数据类型和运算符</a>
+          <a href="/2021/09/06/java/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6/" class="post-title-link" itemprop="url">java数据类型和运算符</a>
         </h2>
 
         <div class="post-meta-container">
@@ -893,7 +517,7 @@
 </blockquote>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/09/06/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6/#more" rel="contents">
+              <a class="btn" href="/2021/09/06/java/java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E8%BF%90%E7%AE%97%E7%AC%A6/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -924,7 +548,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/06/java%E7%AE%80%E5%8F%B2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/06/java/java%E7%AE%80%E5%8F%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -937,7 +561,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/06/java%E7%AE%80%E5%8F%B2/" class="post-title-link" itemprop="url">java简史</a>
+          <a href="/2021/09/06/java/java%E7%AE%80%E5%8F%B2/" class="post-title-link" itemprop="url">java简史</a>
         </h2>
 
         <div class="post-meta-container">
@@ -984,7 +608,7 @@
 <p>  – 在台湾中文名为“升 阳电脑公司”。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/09/06/java%E7%AE%80%E5%8F%B2/#more" rel="contents">
+              <a class="btn" href="/2021/09/06/java/java%E7%AE%80%E5%8F%B2/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1015,7 +639,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/05/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/05/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1028,7 +652,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/05/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">排序算法</a>
+          <a href="/2021/09/05/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">排序算法</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1072,7 +696,7 @@
 <p>​            1、比较和非比较的策略</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/09/05/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#more" rel="contents">
+              <a class="btn" href="/2021/09/05/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1103,7 +727,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/02/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/02/java/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1116,7 +740,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/02/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">lambda表达式的使用</a>
+          <a href="/2021/09/02/java/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">lambda表达式的使用</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1161,7 +785,7 @@
 <p>lambda可以极大的减少代码冗余，同时代码的可读性要好过冗长的内部类，匿名类</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/09/02/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/#more" rel="contents">
+              <a class="btn" href="/2021/09/02/java/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1192,7 +816,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/01/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/01/java/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1205,7 +829,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/09/01/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">JDK12的安装搭建</a>
+          <a href="/2021/09/01/java/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">JDK12的安装搭建</a>
         </h2>
 
         <div class="post-meta-container">
@@ -1249,7 +873,7 @@
 <p><img src="/image/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/jdk12%E4%B8%8B%E8%BD%BD.png" alt="jdk12下载"></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/09/01/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/#more" rel="contents">
+              <a class="btn" href="/2021/09/01/java/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

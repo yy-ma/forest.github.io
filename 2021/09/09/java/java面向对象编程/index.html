@@ -21,38 +21,42 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="面向对象编程初步 (OOP:Object Oriented Programming)  对象和类的概念 对象：是具体的事物  类：是对对象的抽象（抽象抽出象的部分）  先有具体的对象，然后抽象各个对象乊间象的部分，归纳出类通 过类再认识其他对象。   如何创建和使用对象 使用对象的步骤：  – 创建对象 ▪ 类名 对象名 &#x3D; new 类名(); Person person &#x3D; new Person">
+<meta name="description" content="面向对象编程初步 (OOP:Object Oriented Programming)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java面向对象编程">
-<meta property="og:url" content="http://example.com/2021/09/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:url" content="http://example.com/2021/09/09/java/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Little Forest">
-<meta property="og:description" content="面向对象编程初步 (OOP:Object Oriented Programming)  对象和类的概念 对象：是具体的事物  类：是对对象的抽象（抽象抽出象的部分）  先有具体的对象，然后抽象各个对象乊间象的部分，归纳出类通 过类再认识其他对象。   如何创建和使用对象 使用对象的步骤：  – 创建对象 ▪ 类名 对象名 &#x3D; new 类名(); Person person &#x3D; new Person">
+<meta property="og:description" content="面向对象编程初步 (OOP:Object Oriented Programming)">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171529778.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171644776.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909172709231.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213247154.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213411855.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213633962.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909221038378.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909222733197.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909222713139.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909223331343.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909223643601.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909224040369.png">
-<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909224312599.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171529778.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171644776.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909172709231.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213247154.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213411855.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213633962.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909221038378.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909222733197.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909222713139.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909223331343.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909223643601.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909224040369.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909224312599.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210910091453612.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210910093412937.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210910093728913.png">
+<meta property="og:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210910093857737.png">
 <meta property="article:published_time" content="2021-09-08T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-09T14:54:28.634Z">
+<meta property="article:modified_time" content="2021-09-10T01:45:51.334Z">
 <meta property="article:author" content="Yingyi.ma">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171529778.png">
+<meta name="twitter:image" content="http://example.com/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171529778.png">
 
 
-<link rel="canonical" href="http://example.com/2021/09/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
+<link rel="canonical" href="http://example.com/2021/09/09/java/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/","path":"2021/09/09/java面向对象编程/","title":"java面向对象编程"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/09/java/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/","path":"2021/09/09/java/java面向对象编程/","title":"java面向对象编程"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>java面向对象编程 | Little Forest</title>
@@ -133,7 +137,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%88%9D%E6%AD%A5-OOP-Object-Oriented-Programming"><span class="nav-number">1.</span> <span class="nav-text">面向对象编程初步 (OOP:Object Oriented Programming)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">对象和类的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.</span> <span class="nav-text">如何创建和使用对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%92%8C%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="nav-number">1.3.</span> <span class="nav-text">局部变量和成员变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">内存分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%99%A8"><span class="nav-number">1.6.</span> <span class="nav-text">构造器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8"><span class="nav-number">1.7.</span> <span class="nav-text">方法调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E7%9B%B8%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6"><span class="nav-number">2.</span> <span class="nav-text">面相对象进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#this%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.1.</span> <span class="nav-text">this关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.2.</span> <span class="nav-text">static 关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E7%B1%BB%E4%B8%AD%EF%BC%8C%E7%94%A8static%E5%A3%B0%E6%98%8E%E7%9A%84%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E4%B8%BA%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F-%E6%88%92%E8%80%85%E5%8F%AB%E5%81%9A%EF%BC%9A-%E7%B1%BB%E5%B1%9E%E6%80%A7%EF%BC%8C%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="nav-number">2.2.1.</span> <span class="nav-text">在类中，用static声明的成员变量为静态成员变量 ,戒者叫做： 类属性，类变量.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8static%E5%A3%B0%E6%98%8E%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%BA%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.2.</span> <span class="nav-text">用static声明的方法为静态方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">2.3.</span> <span class="nav-text">代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E5%9D%97"><span class="nav-number">2.4.</span> <span class="nav-text">静态初始化块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pakage"><span class="nav-number">2.5.</span> <span class="nav-text">pakage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK%E4%B8%AD%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8C%85"><span class="nav-number">2.6.</span> <span class="nav-text">JDK中的主要包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import"><span class="nav-number">2.7.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import-static"><span class="nav-number">2.8.</span> <span class="nav-text">import static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81"><span class="nav-number">2.9.</span> <span class="nav-text">面向对象的三大特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%AC%A6%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%B0%81%E8%A3%85"><span class="nav-number">2.10.</span> <span class="nav-text">使用访问控制符，实现封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-number">2.11.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#super%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.12.</span> <span class="nav-text">super关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E5%B0%8F%E7%BB%93"><span class="nav-number">2.13.</span> <span class="nav-text">继承小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99%EF%BC%88override%EF%BC%89"><span class="nav-number">2.14.</span> <span class="nav-text">方法的重写（override）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">2.15.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">2.16.</span> <span class="nav-text">抽象方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#final%E7%94%A8%E6%B3%95"><span class="nav-number">2.17.</span> <span class="nav-text">final用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object%E7%B1%BB"><span class="nav-number">2.18.</span> <span class="nav-text">Object类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%AF%94%E8%BE%83-%E5%92%8Cequals"><span class="nav-number">2.19.</span> <span class="nav-text">对象的比较&#x3D;&#x3D;和equals()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E6%B7%B1%E5%8C%96"><span class="nav-number">2.20.</span> <span class="nav-text">继承深化</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E5%88%9D%E6%AD%A5-OOP-Object-Oriented-Programming"><span class="nav-number">1.</span> <span class="nav-text">面向对象编程初步 (OOP:Object Oriented Programming)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">对象和类的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E5%92%8C%E4%BD%BF%E7%94%A8%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.2.</span> <span class="nav-text">如何创建和使用对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%92%8C%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F"><span class="nav-number">1.3.</span> <span class="nav-text">局部变量和成员变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.4.</span> <span class="nav-text">引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90"><span class="nav-number">1.5.</span> <span class="nav-text">内存分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E5%99%A8"><span class="nav-number">1.6.</span> <span class="nav-text">构造器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E8%B0%83%E7%94%A8"><span class="nav-number">1.7.</span> <span class="nav-text">方法调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E7%9B%B8%E5%AF%B9%E8%B1%A1%E8%BF%9B%E9%98%B6"><span class="nav-number">2.</span> <span class="nav-text">面相对象进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#this%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.1.</span> <span class="nav-text">this关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.2.</span> <span class="nav-text">static 关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E7%B1%BB%E4%B8%AD%EF%BC%8C%E7%94%A8static%E5%A3%B0%E6%98%8E%E7%9A%84%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E4%B8%BA%E9%9D%99%E6%80%81%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F-%E6%88%92%E8%80%85%E5%8F%AB%E5%81%9A%EF%BC%9A-%E7%B1%BB%E5%B1%9E%E6%80%A7%EF%BC%8C%E7%B1%BB%E5%8F%98%E9%87%8F"><span class="nav-number">2.2.1.</span> <span class="nav-text">在类中，用static声明的成员变量为静态成员变量 ,戒者叫做： 类属性，类变量.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8static%E5%A3%B0%E6%98%8E%E7%9A%84%E6%96%B9%E6%B3%95%E4%B8%BA%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.2.</span> <span class="nav-text">用static声明的方法为静态方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">2.3.</span> <span class="nav-text">代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%88%9D%E5%A7%8B%E5%8C%96%E5%9D%97"><span class="nav-number">2.4.</span> <span class="nav-text">静态初始化块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pakage"><span class="nav-number">2.5.</span> <span class="nav-text">pakage</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK%E4%B8%AD%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8C%85"><span class="nav-number">2.6.</span> <span class="nav-text">JDK中的主要包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Import"><span class="nav-number">2.7.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#import-static"><span class="nav-number">2.8.</span> <span class="nav-text">import static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81"><span class="nav-number">2.9.</span> <span class="nav-text">面向对象的三大特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%AC%A6%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%B0%81%E8%A3%85"><span class="nav-number">2.10.</span> <span class="nav-text">使用访问控制符，实现封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-number">2.11.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#super%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">2.12.</span> <span class="nav-text">super关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E5%B0%8F%E7%BB%93"><span class="nav-number">2.13.</span> <span class="nav-text">继承小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E9%87%8D%E5%86%99%EF%BC%88override%EF%BC%89"><span class="nav-number">2.14.</span> <span class="nav-text">方法的重写（override）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">2.15.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">2.16.</span> <span class="nav-text">抽象方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#final%E7%94%A8%E6%B3%95"><span class="nav-number">2.17.</span> <span class="nav-text">final用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Object%E7%B1%BB"><span class="nav-number">2.18.</span> <span class="nav-text">Object类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%AF%94%E8%BE%83-%E5%92%8Cequals"><span class="nav-number">2.19.</span> <span class="nav-text">对象的比较&#x3D;&#x3D;和equals()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E6%B7%B1%E5%8C%96"><span class="nav-number">2.20.</span> <span class="nav-text">继承深化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81"><span class="nav-number">2.21.</span> <span class="nav-text">多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">2.22.</span> <span class="nav-text">引用数据类型的类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3-interface"><span class="nav-number">2.23.</span> <span class="nav-text">接口 interface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB%E2%80%94%E6%88%90%E5%91%98%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.24.</span> <span class="nav-text">内部类—成员内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E5%A4%96%E9%83%A8%E8%AE%BF%E9%97%AE%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.25.</span> <span class="nav-text">在外部访问内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB%E2%80%93%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.26.</span> <span class="nav-text">内部类–静态内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB%E2%80%93%E5%8C%BF%E5%90%8D%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.27.</span> <span class="nav-text">内部类–匿名内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB%E2%80%94%E6%96%B9%E6%B3%95%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">2.28.</span> <span class="nav-text">内部类—方法内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6"><span class="nav-number">2.29.</span> <span class="nav-text">垃圾回收机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6%E5%85%B3%E9%94%AE%E7%82%B9"><span class="nav-number">2.30.</span> <span class="nav-text">垃圾回收机制关键点</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -196,7 +200,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/09/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/09/java/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -219,10 +223,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-09-09 00:00:00 / 修改时间：22:54:28" itemprop="dateCreated datePublished" datetime="2021-09-09T00:00:00+08:00">2021-09-09</time>
+      <time title="创建时间：2021-09-09 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-09T00:00:00+08:00">2021-09-09</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2021-09-10 09:45:51" itemprop="dateModified" datetime="2021-09-10T09:45:51+08:00">2021-09-10</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -243,8 +253,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="面向对象编程初步-OOP-Object-Oriented-Programming"><a href="#面向对象编程初步-OOP-Object-Oriented-Programming" class="headerlink" title="面向对象编程初步 (OOP:Object Oriented Programming)"></a>面向对象编程初步 (OOP:Object Oriented Programming)</h2><p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171529778.png" alt="image-20210909171529778"></p>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171644776.png" alt="image-20210909171644776"></p>
+        <h2 id="面向对象编程初步-OOP-Object-Oriented-Programming"><a href="#面向对象编程初步-OOP-Object-Oriented-Programming" class="headerlink" title="面向对象编程初步 (OOP:Object Oriented Programming)"></a>面向对象编程初步 (OOP:Object Oriented Programming)</h2><p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171529778.png" alt="image-20210909171529778"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909171644776.png" alt="image-20210909171644776"></p>
+<span id="more"></span>
 <h3 id="对象和类的概念"><a href="#对象和类的概念" class="headerlink" title="对象和类的概念"></a>对象和类的概念</h3><ul>
 <li><p>对象：是具体的事物</p>
 </li>
@@ -282,7 +293,7 @@
 <h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><ul>
 <li>Java 语言中除基本类型乊外的变量类型都称乊为引用类型。</li>
 </ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909172709231.png" alt="image-20210909172709231"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909172709231.png" alt="image-20210909172709231"></p>
 <ul>
 <li><p>Java中的对象和数组是通过引用对其操作的.</p>
 <p>– 引用可以理解为一种受限的指针</p>
@@ -349,10 +360,10 @@
 <li><p>this不能用于static方法。</p>
 </li>
 </ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213247154.png" alt="image-20210909213247154"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213247154.png" alt="image-20210909213247154"></p>
 <h3 id="static-关键字"><a href="#static-关键字" class="headerlink" title="static 关键字"></a>static 关键字</h3><h4 id="在类中，用static声明的成员变量为静态成员变量-戒者叫做：-类属性，类变量"><a href="#在类中，用static声明的成员变量为静态成员变量-戒者叫做：-类属性，类变量" class="headerlink" title="在类中，用static声明的成员变量为静态成员变量 ,戒者叫做： 类属性，类变量."></a>在类中，用static声明的成员变量为静态成员变量 ,戒者叫做： 类属性，类变量.</h4><p>它为该类的公用变量，属于类，被该类的所有实例共享，在类被载入时被显式初始化， 对于该类的所有对象来说，static成员变量只有一份。被该类的所有对象共享！！ 可以使用”对象.类属性”来调用。不过，一般都是用“类名.类属性” static变量置于方法区中！</p>
 <h4 id="用static声明的方法为静态方法"><a href="#用static声明的方法为静态方法" class="headerlink" title="用static声明的方法为静态方法"></a>用static声明的方法为静态方法</h4><p>不需要对象，就可以调用(类名.方法名) 在调用该方法时，不会将对象的引用传递给它，所以在static方法中不可访问非static的成员。 静态方法不能以任何方式引用this和super关键字</p>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213411855.png" alt="image-20210909213411855"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213411855.png" alt="image-20210909213411855"></p>
 <ul>
 <li><p>使用static声明的成员变量称为静态变量， </p>
 </li>
@@ -378,7 +389,7 @@
 <li><p>static修饰与非static修饰的区别</p>
 </li>
 </ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213633962.png" alt="image-20210909213633962"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909213633962.png" alt="image-20210909213633962"></p>
 <h3 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h3><ul>
 <li><p>概念:使用”{}”括起来的一段代码 </p>
 </li>
@@ -485,7 +496,7 @@
 <p>​    ▪可被同一个包中的类访问。</p>
 </li>
 </ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909221038378.png" alt="image-20210909221038378"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909221038378.png" alt="image-20210909221038378"></p>
 <ul>
 <li><p>封装要点</p>
 <p>类的属性的处理:</p>
@@ -502,7 +513,7 @@
 <li><p>extands的意思是“扩展”。子类是父类的扩展 ▪ 丌同的叨法：超类、父类、基类、子类、派生类</p>
 </li>
 </ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909222733197.png" alt="image-20210909222733197"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909222733197.png" alt="image-20210909222733197"></p>
 <h3 id="super关键字"><a href="#super关键字" class="headerlink" title="super关键字"></a>super关键字</h3><ul>
 <li><p>super是直接父类对象的引用。</p>
 </li>
@@ -515,7 +526,7 @@
 <p>▪任何类的构造函数中，若是构造函数的第一行代码没有显式的调用super(…);那么 Java默认都会调用super();作为父类的初始化函数。 所以你这里的super();加丌加 都无所谓。</p>
 </li>
 </ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909222713139.png" alt="image-20210909222713139"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909222713139.png" alt="image-20210909222713139"></p>
 <p>super关键字来访问父类的成员</p>
 <p>super只能出现在子类的方法和构造方法中 </p>
 <p>super调用构造方法时，只能是第一句 </p>
@@ -530,11 +541,11 @@
 <li><p>访问修饰符总结</p>
 </li>
 </ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909223331343.png" alt="image-20210909223331343"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909223331343.png" alt="image-20210909223331343"></p>
 <ul>
 <li>多重继承关系的初始化顺序是怎样的？</li>
 </ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909223643601.png" alt="image-20210909223643601"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909223643601.png" alt="image-20210909223643601"></p>
 <h3 id="继承小结"><a href="#继承小结" class="headerlink" title="继承小结"></a>继承小结</h3><p>– 通过继承可以简化类的定义，实现代码的重用</p>
 <p>– 子类继承父类的成员变量和成员方法，但丌继承父类的构造方法</p>
 <p>– java中叧有单继承 ，没有像c++那样的多继承。多继承会引起混乱，使得 继承链过于复杂，系统难于维护。就像我们现实中，如果你有多个父母亲， 那是一个多么混乱的世界啊。多继承，就是为了实现代码的复用性，却引入 了复杂性，使得系统类乊间的关系混乱。</p>
@@ -560,11 +571,11 @@
 <li><p>方法重载不方法重写</p>
 </li>
 </ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909224040369.png" alt="image-20210909224040369"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909224040369.png" alt="image-20210909224040369"></p>
 <h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><ul>
 <li>Java中使用抽象类，限制实例化</li>
 </ul>
-<p><img src="/Users/mayingyi/03.Blog/forest/source/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909224312599.png" alt="image-20210909224312599"></p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210909224312599.png" alt="image-20210909224312599"></p>
 <h3 id="抽象方法"><a href="#抽象方法" class="headerlink" title="抽象方法"></a>抽象方法</h3><ul>
 <li><p>abstract也可用于方法——抽象方法</p>
 </li>
@@ -634,6 +645,134 @@
 <p>– 先向上追溯到Object，然后再依次向下执行类的初始化块和构造方法，直 到当前子类为止。</p>
 </li>
 </ul>
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>多态：同一个引用类型，使用不同的实例而执行不同操作</p>
+<p>多态性是OOP中的一个重要特性，主要是用来实现动态联编的，换句话说，就是程序的最终状态只有在执行过程中才被决定而非在编译期间就 决定了。这对于大型系统来说能提高系统的灵活性和扩展性。</p>
+<p> java中如何实现多态?使用多态的好处?</p>
+<p>​    引用变量的两种类型：</p>
+<p>​    编译时类型（模糊一点，一般是一个父类）由声明时的类型决定。</p>
+<p>​    运行时类型（运行时，具体是哪个子类就是哪个子类由实际对应的对象类型决定。</p>
+<p>多态的存在要有3个必要条件：</p>
+<p>​    要有继承，要有方法重写，父类引用指向子类对象</p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210910091453612.png" alt="image-20210910091453612"></p>
+<h3 id="引用数据类型的类型转换"><a href="#引用数据类型的类型转换" class="headerlink" title="引用数据类型的类型转换"></a>引用数据类型的类型转换</h3><ul>
+<li><p>子类转换为父类：自动转换</p>
+<p>– 上转型对象不能操作子类新增的成员变量和方法。</p>
+<p>– 上转型对象可以操作子类继承或重写的成员变量和方法</p>
+<p>– 如果子类重写了父类的某个方法，上转型对象调用该方法时，是调用的重写 方法。</p>
+</li>
+<li><p>父类转换为子类：强制转换</p>
+<p>– （绝不是做手术，而是父类的真面目就是一个子类，否则会出现类型转换错 误）</p>
+</li>
+</ul>
+<h3 id="接口-interface"><a href="#接口-interface" class="headerlink" title="接口 interface"></a>接口 interface</h3><blockquote>
+<p>接口是一种能力、约定</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">MyInterface</span> </span>&#123; </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">foo</span><span class="params">()</span>； <span class="comment">//其他方法 </span></span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>必须知道的接口特性</p>
+<p>– 接口比可以被实例化</p>
+<p>– 实现类必须实现接口的所有方法</p>
+<p>– 实现类可以实现多个接口</p>
+<p>– 接口中的变量都是静态常量</p>
+</li>
+<li><p>为什么需要接口?接口和抽象类的区别?</p>
+<p>– 接口就是比“抽象类”还“抽象”的“抽象类”，可以更加规范的对子类迚行约束。 全面地专业地实现了：规范和具体实现的分离。</p>
+<p>– 接口就是规范，定义的是一组规则，体现了现实世界中“如果你是…则必须 能…”的思想。如果你是天使，则必须能飞。如果你是汽车，则必须能跑。如果你好人，则必须干掉坏人；如果你是坏人，则必须欺负好人。</p>
+<p>– 接口的本质是契约，就像我们人间的法律一样。制定好后大家都遵守。</p>
+<p>– 项目的具体需求是多变的，我们必须以不变应万变才能从容开发，此处的 “不变”就是“规范”。因此，我们开发项目往往都是面向接口编程！</p>
+</li>
+<li><p>接口相关规则</p>
+<p>– 接口中所有方法都是抽象的。</p>
+<p>– 即使没有显式的将接口中的成员用public标示，也是public访问类型的</p>
+<p>– 接口中变量默认用 public static final标示，所以接口中定义的变量就是全 局静态常量。</p>
+<p>– 可以定义一个新接口，用extends去继承一个已有的接口</p>
+<p>– 可以定义一个类，用implements去实现一个接口中所有方法。</p>
+<p>– 可以定义一个抽象类，用implements去实现一个接口中部分方法。</p>
+</li>
+<li><p>如何定义接口</p>
+<p>–格式：</p>
+<p>​    ▪[访问修饰符] interface 接口名 [extends 父接口1，父接口2…] {</p>
+<p>​    –常量定义 //总是public static final</p>
+<p>​    –方法定义 //总是：public abstract</p>
+<p>}</p>
+</li>
+<li><p>如何实现接口</p>
+<p>–子类通过implements来实现接口中的规范</p>
+<p>–接口不能创建实例，但是可用于声明引用变量类型。</p>
+<p>–一个类实现了接口，必须实现接口中所有的方法，并且这些方法只能是public的。</p>
+<p>–Java的类只支持单继承，接口支持多继承</p>
+</li>
+<li><p>C++支持多重继承，Java支持单重继承</p>
+</li>
+<li><p>C++多重继承的危险性在于一个类可能继承了同一个方法的不同实现，会导致系统崩溃。 </p>
+</li>
+<li><p>Java中，一个类只能继承一个类，但同时可以实现多个接口，既可以实现多重继承的效果和功能，也避免的多重继承的危险性。</p>
+</li>
+<li><p> class Student extents Person implements Runner，Flyer {…} </p>
+</li>
+<li><p>注意：extends 必须位于implements乊前</p>
+</li>
+</ul>
+<h3 id="内部类—成员内部类"><a href="#内部类—成员内部类" class="headerlink" title="内部类—成员内部类"></a>内部类—成员内部类</h3><blockquote>
+<p> 把一个类定义在另一个类的内部称为内部类</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.mashibing.demo;<span class="comment">//声明包 </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span>//声明类 </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String info=<span class="string">&quot;hello World&quot;</span>;<span class="comment">//声明私有属性 </span></span><br><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">Inner</span> //声明类 </span></span><br><span class="line"><span class="class">	</span>&#123;</span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;<span class="comment">//打印输出的方法 </span></span><br><span class="line">  	System.out.println(info);</span><br><span class="line">		&#125; </span><br><span class="line">	&#125; </span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span>&#123;<span class="comment">//定义方法</span></span><br><span class="line">		<span class="keyword">new</span> Inner().print();<span class="comment">//通过内部类调用方法 </span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125; </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestOuterAndInner2</span>//测试类 </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>&#123;</span><br><span class="line">	<span class="keyword">new</span> Outer().fun();<span class="comment">//调用方法</span></span><br><span class="line">	&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项：</p>
+<p>（1）外部类丌能直接使用内部类的成员和方法 </p>
+<p>（2）如果外部类和内部类具有相同的成员变量戒方法，内部类 默认访问自己的成员变量戒方法，如果要访问外部类的成员变量， 需使用this关键字</p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210910093412937.png" alt="image-20210910093412937"></p>
+<h3 id="在外部访问内部类"><a href="#在外部访问内部类" class="headerlink" title="在外部访问内部类"></a>在外部访问内部类</h3><p>外部类 外部类对象=new 外部类();</p>
+<p>外部类.内部类 内部类对象=外部类对象.new 内部类 ();</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>&#123; Outer out=<span class="keyword">new</span> Outer();<span class="comment">//创建外部类的对象 </span></span><br><span class="line">                                        Outer.Inner inner=out.<span class="function">new <span class="title">Inner</span><span class="params">()</span></span>;<span class="comment">//创建内部类的对象</span></span><br><span class="line">                                        inner.print();<span class="comment">//访问内部类的方法 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果主方法在外部类内部，则可以省略Outer Inner inner=out.new Inner();</p>
+<h3 id="内部类–静态内部类"><a href="#内部类–静态内部类" class="headerlink" title="内部类–静态内部类"></a>内部类–静态内部类</h3><p>new 外部类类名.内部类().方法名</p>
+<p>外部类类名.内部类 内部类对象名=new 外部类类名.内部类类名();</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.bjsxt.demo;<span class="comment">//声明包 </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Outer</span>//声明类 </span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> String info=<span class="string">&quot;hello World&quot;</span>;<span class="comment">// 声明私有属性 </span></span><br><span class="line">  <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Inner</span>//声明静态内部类 </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;<span class="comment">//打印输出的方法 </span></span><br><span class="line">    System.out.println(info);</span><br><span class="line"></span><br><span class="line">&#125; &#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String [] args)</span></span>&#123; <span class="keyword">new</span> Outer. Inner().print();<span class="comment">//调用方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用static声明的内部类不能访问非static的外部属性</p>
+<h3 id="内部类–匿名内部类"><a href="#内部类–匿名内部类" class="headerlink" title="内部类–匿名内部类"></a>内部类–匿名内部类</h3><ul>
+<li>适合只需要使用一次的类，安卓中使用的比较多</li>
+</ul>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210910093728913.png" alt="image-20210910093728913"></p>
+<h3 id="内部类—方法内部类"><a href="#内部类—方法内部类" class="headerlink" title="内部类—方法内部类"></a>内部类—方法内部类</h3><p>方法内部类是指：将内部类定义在外部类的方法 中。</p>
+<p> ▪ 注意事项： </p>
+<p>（1）方法内部类丌能在外部类的方法以外的地方使用，所以 方法内部类不能使用访问控制符和static修饰符</p>
+<p><img src="/image/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/image-20210910093857737.png" alt="image-20210910093857737"></p>
+<h3 id="垃圾回收机制"><a href="#垃圾回收机制" class="headerlink" title="垃圾回收机制"></a>垃圾回收机制</h3><ul>
+<li><p>对象空间的分配：</p>
+<p>​    –使用new关键字创建对象卲可 </p>
+</li>
+<li><p>对象空间的释放：</p>
+<p>–传统的C/C++语言，需要程序员负责回收已经分配内存。显式回收垃圾回收的缺点：</p>
+<p>​    ▪程序忘记及时回收，从而导致内存泄露，降低系统性能。 </p>
+<p>​    ▪程序错误回收程序核心类库的内存，导致系统崩溃。</p>
+</li>
+</ul>
+<p>–Java语言丌需要程序员直接控制内存回收，是由JRE在后台自动回收丌再使用的内 存，称为垃圾回收机制(Garbage Collection)。</p>
+<p>​    ▪可以提高编程效率。 </p>
+<p>​    ▪保护程序的完整性。 </p>
+<p>​    ▪其开销影响性能。Java虚拟机必须跟踪程序中有用的对象，确定哪些是无用的。</p>
+<h3 id="垃圾回收机制关键点"><a href="#垃圾回收机制关键点" class="headerlink" title="垃圾回收机制关键点"></a>垃圾回收机制关键点</h3><ul>
+<li><p>垃圾回收机制只回收JVM堆内存里的对象空间。 </p>
+</li>
+<li><p>对其他物理连接，比如数据库连接、输入流输出流、Socket连接无能为力 </p>
+</li>
+<li><p>现在的JVM有多种垃圾回收实现算法，表现各异。 </p>
+</li>
+<li><p>垃圾回收发生具有不可预知性，程序无法精确控制垃圾回收机制执行。 </p>
+</li>
+<li><p>可以将对象的引用变量设置为null，暗示垃圾回收机制可以回收该对象。 </p>
+</li>
+<li><p>程序员可以通过System.gc()戒者Runtime.getRuntime().gc()来通知系统进行垃圾回收，会有一些效果，但是系统是否迚行垃圾回收依然不确定。 </p>
+</li>
+<li><p>垃圾回收机制回收任何对象之前，总会先调用它的finalize方法（如果覆盖该方法，让一个新的引用变量重新引用该对象，则会重新激活对象）。 </p>
+</li>
+<li><p>永进不要主动调用某个对象的finalize方法，应该交给垃圾回收机制调用。</p>
+</li>
+</ul>
 
     </div>
 
@@ -647,7 +786,7 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/09/08/java%E6%95%B0%E7%BB%84/" rel="prev" title="java数组">
+                <a href="/2021/09/08/java/java%E6%95%B0%E7%BB%84/" rel="prev" title="java数组">
                   <i class="fa fa-chevron-left"></i> java数组
                 </a>
             </div>
