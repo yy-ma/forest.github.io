@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/forest.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/forest.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/forest.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-o1gdvcr4pe">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="常用类包装类 ​        包装类是将基本类型封装到一个类中包含属性和方法，方便对象操作 包装类位于java.lang包中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java常用类">
+<meta property="og:url" content="http://example.com/2021/09/10/java/java%E5%B8%B8%E7%94%A8%E7%B1%BB/index.html">
+<meta property="og:site_name" content="Little Forest">
+<meta property="og:description" content="常用类包装类 ​        包装类是将基本类型封装到一个类中包含属性和方法，方便对象操作 包装类位于java.lang包中">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910114032713.png">
+<meta property="og:image" content="http://example.com/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910144615836.png">
+<meta property="og:image" content="http://example.com/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910150552292.png">
+<meta property="og:image" content="http://example.com/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910150618459.png">
+<meta property="og:image" content="http://example.com/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910150925271.png">
+<meta property="og:image" content="http://example.com/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910151239234.png">
+<meta property="og:image" content="http://example.com/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910151507124.png">
+<meta property="article:published_time" content="2021-09-09T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-10T07:32:12.986Z">
+<meta property="article:author" content="Yingyi.ma">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910114032713.png">
+
+
+<link rel="canonical" href="http://example.com/2021/09/10/java/java%E5%B8%B8%E7%94%A8%E7%B1%BB/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/10/java/java%E5%B8%B8%E7%94%A8%E7%B1%BB/","path":"2021/09/10/java/java常用类/","title":"java常用类"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>java常用类 | Little Forest</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Little Forest</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">夏天 永不结束</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">常用类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E8%A3%85%E7%B1%BB"><span class="nav-number">1.1.</span> <span class="nav-text">包装类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E8%A3%85%E7%B1%BB%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.</span> <span class="nav-text">包装类和基本类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E5%92%8C%E8%87%AA%E5%8A%A8%E6%8B%86%E7%AE%B1-auto-boxing-amp-unboxing"><span class="nav-number">1.3.</span> <span class="nav-text">自动装箱和自动拆箱 (auto-boxing &amp; unboxing)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.4.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-number">1.5.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String%E7%B1%BB%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.6.</span> <span class="nav-text">String类的常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%AF%94%E8%BE%83"><span class="nav-number">1.7.</span> <span class="nav-text">字符串比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.8.</span> <span class="nav-text">字符串连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%B8%B8%E7%94%A8%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95"><span class="nav-number">1.9.</span> <span class="nav-text">字符串常用提取方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%86%E5%88%86"><span class="nav-number">1.10.</span> <span class="nav-text">字符串拆分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuffer%E7%B1%BB%E4%B8%8EStringBuilder%E7%B1%BB"><span class="nav-number">1.11.</span> <span class="nav-text">StringBuffer类与StringBuilder类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StringBuffer%E7%B1%BB"><span class="nav-number">1.12.</span> <span class="nav-text">StringBuffer类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%80%89%E7%94%A8"><span class="nav-number">1.13.</span> <span class="nav-text">字符串选用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86%E7%9B%B8%E5%85%B3%E7%B1%BB"><span class="nav-number">1.14.</span> <span class="nav-text">时间处理相关类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date%E6%97%B6%E9%97%B4%E7%B1%BB-java-util-Date"><span class="nav-number">1.15.</span> <span class="nav-text">Date时间类( java.util.Date)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Calendar"><span class="nav-number">1.16.</span> <span class="nav-text">Calendar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Math%E7%B1%BB"><span class="nav-number">1.17.</span> <span class="nav-text">Math类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE"><span class="nav-number">1.18.</span> <span class="nav-text">枚举</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yingyi.ma</p>
+  <div class="site-description" itemprop="description">(,,･∀･)ﾉ゛hello</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yy-ma" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yy-ma" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yingyi.ma@aliyun.com" title="E-Mail → mailto:yingyi.ma@aliyun.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/10/java/java%E5%B8%B8%E7%94%A8%E7%B1%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yingyi.ma">
+      <meta itemprop="description" content="(,,･∀･)ﾉ゛hello">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Little Forest">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java常用类
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-09-10 00:00:00 / 修改时间：15:32:12" itemprop="dateCreated datePublished" datetime="2021-09-10T00:00:00+08:00">2021-09-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="常用类"><a href="#常用类" class="headerlink" title="常用类"></a>常用类</h2><h3 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h3><blockquote>
+<p>​        包装类是将基本类型封装到一个类中包含属性和方法，方便对象操作 包装类位于java.lang包中</p>
+</blockquote>
+<p><img src="/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910114032713.png" alt="image-20210910114032713"></p>
+<span id="more"></span>
+<h3 id="包装类和基本类型"><a href="#包装类和基本类型" class="headerlink" title="包装类和基本类型"></a>包装类和基本类型</h3><ul>
+<li>基本数据类型转换为包装类</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer intValue = <span class="keyword">new</span> Integer(<span class="number">21</span>); </span><br><span class="line">Integer intValue = <span class="keyword">new</span> Integer(<span class="string">&quot;21&quot;</span>); </span><br><span class="line">Integer intValue = Integer.valueOf(<span class="string">&quot;21&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>包装类转换成基本类型</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer integerId=<span class="keyword">new</span> Integer(<span class="number">25</span>); </span><br><span class="line"><span class="keyword">int</span> intId=integerId.intValue();</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>基本类型和包装类的自动转换</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Integer intObject = <span class="number">5</span>; </span><br><span class="line"><span class="keyword">int</span> intValue = intObject;</span><br></pre></td></tr></table></figure>
+
+<h3 id="自动装箱和自动拆箱-auto-boxing-amp-unboxing"><a href="#自动装箱和自动拆箱-auto-boxing-amp-unboxing" class="headerlink" title="自动装箱和自动拆箱 (auto-boxing &amp; unboxing)"></a>自动装箱和自动拆箱 (auto-boxing &amp; unboxing)</h3><ul>
+<li><p>自动装箱</p>
+<p>– 基本类型就自动地封装到与它相同类型的包装中，如：</p>
+<p>– Integer i = 100;</p>
+<p>– 本质上是，编译器编译时为我们添加了：</p>
+<p>– Integer i = Integer.valueOf(100);</p>
+</li>
+<li><p>自动拆箱</p>
+<p>– 包装类对象自动转换成基本类型数据。如：</p>
+<p>– int a = new Integer(100);</p>
+<p>– 本质上，编译器编译时为我们添加了：</p>
+<p>– int a = new Integer(100).intValue();</p>
+</li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><ul>
+<li>使用String对象存储字符串</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="string">&quot;Hello World&quot;</span>;</span><br><span class="line">String s = <span class="keyword">new</span> String();</span><br><span class="line">String s = <span class="keyword">new</span> String(<span class="string">&quot;Hello World&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>String类位于java.lang包中，具有丰富的方法</p>
+<p>– 计算字符串的长度、比较字符串、连接字符串、提取字符串</p>
+</li>
+</ul>
+<h3 id="String"><a href="#String" class="headerlink" title="String"></a>String</h3><ul>
+<li><p>Java字符串就是Unicode字符序列，例如串“Java”就是4个 Unicode字符J,a,v,a组成的。</p>
+</li>
+<li><p>Java允许使用符号”+”把两个字符串连接起来</p>
+<p>– String s1 = “Hello”;String s2 = “World!”;</p>
+<p>– String s = s1 + s2; //HelloWorld!</p>
+</li>
+</ul>
+<h3 id="String类的常用方法"><a href="#String类的常用方法" class="headerlink" title="String类的常用方法"></a>String类的常用方法</h3><ul>
+<li><p>char charAt(int index)</p>
+<p>​    返回字符串中第index个字符。 </p>
+</li>
+<li><p>boolean equals(String other) 如果字符串与other相等，返回true</p>
+</li>
+<li><p>boolean equalsIgnoreCase(String other) 如果字符串与other相等（忽略大小写），则返回true </p>
+</li>
+<li><p>int indexOf(String str) lastIndexOf(String str,int idx)</p>
+</li>
+<li><p>int length() 返回字符串的长度。 </p>
+</li>
+<li><p>String replace(char oldChar,char newChar)</p>
+<p>​    返回一个新串，它是通过用 newChar 替换此字符串中出现的所有oldChar 而生成的</p>
+</li>
+<li><p>boolean startsWith(String prefix)</p>
+<p>如果字符串以prefix开始，则返回true</p>
+</li>
+<li><p>boolean endsWith(String prefix)</p>
+<p>如果字符串以prefix结尾，则返回true</p>
+</li>
+<li><p>String substring(int beginIndex) String substring(int beginIndex,int endIndex)</p>
+<p>返回一个新字符串，该串包含从原始字符串beginIndex到串尾戒endIndex-1的所有字符</p>
+</li>
+<li><p>String toLowerCase()</p>
+<p>返回一个新字符串，该串将原始字符串中的所有大写字母改成小写字母</p>
+</li>
+<li><p>String toUpperCase()</p>
+<p>返回一个新字符串，该串将原始字符串中的所有小写字母改成大写字母</p>
+</li>
+<li><p>String trim()</p>
+<p>返回一个新字符串，该串删除了原始字符串头部和尾部的空格</p>
+</li>
+</ul>
+<h3 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h3><ul>
+<li>equals判断字符串值相等，==判断字符串对象引用相等！</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StringTest3</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; String s1 = <span class="string">&quot;abc&quot;</span>; String s2 = <span class="string">&quot;abc&quot;</span>; String s3 = <span class="keyword">new</span> String(<span class="string">&quot;abc&quot;</span>); String s4 = <span class="keyword">new</span> String(<span class="string">&quot;abc&quot;</span>); System.out.println(s1==s2);<span class="comment">//true</span></span><br><span class="line">                                        System.out.println(s1==s3);<span class="comment">//false</span></span><br><span class="line">                                        System.out.println(s3==s4);<span class="comment">//false</span></span><br><span class="line"></span><br><span class="line">  </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>内存结构</p>
+<p><img src="/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910144615836.png" alt="image-20210910144615836"></p>
+</li>
+</ul>
+<h3 id="字符串连接"><a href="#字符串连接" class="headerlink" title="字符串连接"></a>字符串连接</h3><ul>
+<li><p>方法1：使用“+”</p>
+</li>
+<li><p>方法2：使用String类的concat()方法</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String s = <span class="keyword">new</span> String(<span class="string">&quot;你好，&quot;</span>); </span><br><span class="line">String name = <span class="keyword">new</span> String(<span class="string">&quot;张三！&quot;</span>); </span><br><span class="line">String sentence = s.concat(name); System.out.println(sentence);</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串常用提取方法"><a href="#字符串常用提取方法" class="headerlink" title="字符串常用提取方法"></a>字符串常用提取方法</h3><ul>
+<li>常用提取方法举例</li>
+</ul>
+<p><img src="/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910150552292.png" alt="image-20210910150552292"></p>
+<p><img src="/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910150618459.png" alt="image-20210910150618459"></p>
+<h3 id="字符串拆分"><a href="#字符串拆分" class="headerlink" title="字符串拆分"></a>字符串拆分</h3><ul>
+<li><p>有一段歌词，每句都以空格“ ”结尾，请将歌词每句按行输出 </p>
+</li>
+<li><p>String 类提供了 split() 方法 ， 将一个字符串分割为子字符串 ， 结 果作为字符串数组返回</p>
+</li>
+</ul>
+<h3 id="StringBuffer类与StringBuilder类"><a href="#StringBuffer类与StringBuilder类" class="headerlink" title="StringBuffer类与StringBuilder类"></a>StringBuffer类与StringBuilder类</h3><p>StringBuffer：String增强版 ，字符串缓冲区，是一个容器</p>
+<ul>
+<li>StringBuffer声明</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer sb = <span class="keyword">new</span> StringBuffer(); </span><br><span class="line">StringBuffer sb = <span class="keyword">new</span> StringBuffer(<span class="string">&quot;aaa&quot;</span>);</span><br><span class="line">sb.toString();<span class="comment">//转化为String类型</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>StringBuffer的使用</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sb.append(<span class="string">&quot;**&quot;</span>); <span class="comment">//追加字符串</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="StringBuffer类"><a href="#StringBuffer类" class="headerlink" title="StringBuffer类"></a>StringBuffer类</h3><ul>
+<li><p>利用StringBuffer类的length()和insert ()方法实现需求 </p>
+</li>
+<li><p>将一个数字字符串转换成逗号分隔的数字串，即从右边 开始每三个数字用逗号分隔</p>
+</li>
+</ul>
+<p><img src="/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910150925271.png" alt="image-20210910150925271"></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestInsert</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123; </span><br><span class="line">  Scanner input = <span class="keyword">new</span> Scanner(System.in); System.out.print(<span class="string">&quot;请输入一串数字： &quot;</span>); </span><br><span class="line">  String nums = input.next(); </span><br><span class="line">  StringBuffer str=<span class="keyword">new</span> StringBuffer(nums); </span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=str.length()-<span class="number">3</span>;i&gt;<span class="number">0</span>;i=i-<span class="number">3</span>)&#123; str.insert(i,<span class="string">&#x27;,&#x27;</span>); </span><br><span class="line">                                     &#125; </span><br><span class="line">  System.out.print(str);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串选用"><a href="#字符串选用" class="headerlink" title="字符串选用"></a>字符串选用</h3><ul>
+<li><p>String：不可变字符序列 </p>
+</li>
+<li><p>StringBuilder：可变字符序列、效率高、线程不安全 </p>
+</li>
+<li><p>StringBuffer：可变字符序列、效率低、线程安全 </p>
+</li>
+<li><p>String使用陷阱：</p>
+<p>– string s=”a”; //创建了一个字符串 s=s+”b”; //实际上原来的”a”字符串对象已经丢弃了，现在又产生了一个字符串 s+”b”。如果多次执行这些改变串内容的操作，会导致大量副本字符串对象存留在内存中，降低效率。如果这样的操作放到循环中，会极大影响程序的性能。</p>
+</li>
+</ul>
+<h3 id="时间处理相关类"><a href="#时间处理相关类" class="headerlink" title="时间处理相关类"></a>时间处理相关类</h3><p><img src="/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910151239234.png" alt="image-20210910151239234"></p>
+<h3 id="Date时间类-java-util-Date"><a href="#Date时间类-java-util-Date" class="headerlink" title="Date时间类( java.util.Date)"></a>Date时间类( java.util.Date)</h3><ul>
+<li><p>Date类：表示日期和时间 </p>
+<p>提供操作日期和时间各组成部分的方法 </p>
+</li>
+<li><p>DateFormat类 与 SimpleDateFormat类</p>
+<p>用于定制日期时间的格式</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Date date = <span class="keyword">new</span> Date(); <span class="comment">//创建日期对象 </span></span><br><span class="line">SimpleDateFormat formater = <span class="keyword">new</span> SimpleDateFormat(<span class="string">&quot;yyyyMM-dd HH:mm:ss&quot;</span>);<span class="comment">//定制日期格式 </span></span><br><span class="line">String now = formater.format(date); System.out.println(now);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h3><ul>
+<li><p>Calendar类：</p>
+<p>抽象类 用于设置和获取日期/时间数据的特定部分 Calendar类提供一些方法和静态字段来操作日历</p>
+</li>
+</ul>
+<p><img src="/image/java%E5%B8%B8%E7%94%A8%E7%B1%BB/image-20210910151507124.png" alt="image-20210910151507124"></p>
+<h3 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h3><ul>
+<li><p>包含了常见的数学运算函数。 </p>
+</li>
+<li><p>random()生成[0,1)之间的随机浮点数 </p>
+</li>
+<li><p>生成：0-10之间的任意整数：</p>
+<p>– int a = (int)(10*Math.random());</p>
+</li>
+<li><p>生成：20-30之间的任意整数：</p>
+<p>– int b = 20 + (int)(10*Math.random());</p>
+</li>
+</ul>
+<h3 id="枚举"><a href="#枚举" class="headerlink" title="枚举"></a>枚举</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[Modifier] <span class="class"><span class="keyword">enum</span> <span class="title">enumName</span></span>&#123; </span><br><span class="line">  enumContantName1[， </span><br><span class="line">  enumConstantName2...[;]] </span><br><span class="line">    <span class="comment">//[field，method] </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">Genders</span></span>&#123; </span><br><span class="line">	Male,Female</span><br><span class="line">-------------------</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> Genders sex;</span><br><span class="line">-------------------</span><br><span class="line">Student stu=<span class="keyword">new</span> Student(); </span><br><span class="line">stu.sex=Genders.Male;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>枚举类型</li>
+</ul>
+<ol>
+<li><p>只能够取特定值中的一个</p>
+</li>
+<li><p>使用enum关键字</p>
+</li>
+<li><p>所有的枚举类型隐性地继承自 java.lang.Enum。（枚举实质上还是类！ 而每个被枚举的成员实质就是一个枚举类型的实例，他们默认都是publi c static final的。可以直接通过枚举类型名直接使用它们。）</p>
+</li>
+<li><p>强烈建议当你需要定义一组常量时，使用枚举类型</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/09/10/java/java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" rel="prev" title="java异常处理">
+                  <i class="fa fa-chevron-left"></i> java异常处理
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yingyi.ma</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
