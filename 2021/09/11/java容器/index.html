@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/forest.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/forest.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/forest.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-o1gdvcr4pe">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="Java容器 Java集合框架提供了一套性能优良、使用方便的接口和类，它们 位于java.util包中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java容器">
+<meta property="og:url" content="http://example.com/2021/09/11/java%E5%AE%B9%E5%99%A8/index.html">
+<meta property="og:site_name" content="Little Forest">
+<meta property="og:description" content="Java容器 Java集合框架提供了一套性能优良、使用方便的接口和类，它们 位于java.util包中">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/java%E5%AE%B9%E5%99%A8/image-20210911151416298.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911151456833.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911151554697.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911151636377.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911153039564.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911153103807.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911153348816.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911153518272.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154156761.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154224151.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154400579.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154444872.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154514559.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154531179.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154607066.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911161045749.png">
+<meta property="og:image" content="http://example.com/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911161200450.png">
+<meta property="article:published_time" content="2021-09-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-11T08:34:45.527Z">
+<meta property="article:author" content="Yingyi.ma">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/java%E5%AE%B9%E5%99%A8/image-20210911151416298.png">
+
+
+<link rel="canonical" href="http://example.com/2021/09/11/java%E5%AE%B9%E5%99%A8/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/11/java%E5%AE%B9%E5%99%A8/","path":"2021/09/11/java容器/","title":"java容器"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>java容器 | Little Forest</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Little Forest</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">夏天 永不结束</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E5%AE%B9%E5%99%A8"><span class="nav-number">1.</span> <span class="nav-text">Java容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Collection%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">Collection接口的常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List%E4%B8%8DSet%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.2.</span> <span class="nav-text">List不Set接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">List接口的实现类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List%E6%8E%A5%E5%8F%A3%E7%89%B9%E6%9C%89%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.</span> <span class="nav-text">List接口特有的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterator-%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.5.</span> <span class="nav-text">Iterator 接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81ListIterator"><span class="nav-number">1.6.</span> <span class="nav-text">为什么需要ListIterator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ListIterator%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.7.</span> <span class="nav-text">ListIterator的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BBLinkedList"><span class="nav-number">1.8.</span> <span class="nav-text">List接口的实现类LinkedList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList%E5%92%8CLinkedList%E6%80%BB%E7%BB%93"><span class="nav-number">1.9.</span> <span class="nav-text">ArrayList和LinkedList总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set%E6%8E%A5%E5%8F%A3%E4%B8%AD%E7%9A%84%E5%AE%9E%E7%8E%B0%E7%B1%BB"><span class="nav-number">1.10.</span> <span class="nav-text">Set接口中的实现类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hash%E8%A1%A8%E5%8E%9F%E7%90%86"><span class="nav-number">1.11.</span> <span class="nav-text">Hash表原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hash%E8%A1%A8"><span class="nav-number">1.12.</span> <span class="nav-text">Hash表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashSet"><span class="nav-number">1.13.</span> <span class="nav-text">HashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashSet%E6%80%BB%E7%BB%93"><span class="nav-number">1.14.</span> <span class="nav-text">HashSet总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeSet"><span class="nav-number">1.15.</span> <span class="nav-text">TreeSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparable-%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.16.</span> <span class="nav-text">Comparable 接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort%E6%8E%92%E5%BA%8F"><span class="nav-number">1.17.</span> <span class="nav-text">sort排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B"><span class="nav-number">1.18.</span> <span class="nav-text">泛型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%9B%E5%9E%8B%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.19.</span> <span class="nav-text">泛型类的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%B3%9B%E5%9E%8B%E9%9B%86%E5%90%88%E8%A7%A3%E5%86%B3%E5%AE%9E%E9%99%85%E9%97%AE%E9%A2%98"><span class="nav-number">1.20.</span> <span class="nav-text">使用泛型集合解决实际问题</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yingyi.ma</p>
+  <div class="site-description" itemprop="description">(,,･∀･)ﾉ゛hello</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yy-ma" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yy-ma" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yingyi.ma@aliyun.com" title="E-Mail → mailto:yingyi.ma@aliyun.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/11/java%E5%AE%B9%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yingyi.ma">
+      <meta itemprop="description" content="(,,･∀･)ﾉ゛hello">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Little Forest">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java容器
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-09-11 00:00:00 / 修改时间：16:34:45" itemprop="dateCreated datePublished" datetime="2021-09-11T00:00:00+08:00">2021-09-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
+        </span>
+    </span>
+
+  
+    <span id="/2021/09/11/java%E5%AE%B9%E5%99%A8/" class="post-meta-item leancloud_visitors" data-flag-title="java容器" title="阅读次数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span class="leancloud-visitors-count"></span>
+    </span>
+    <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">阅读次数：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Java容器"><a href="#Java容器" class="headerlink" title="Java容器"></a>Java容器</h2><blockquote>
+<p>Java集合框架提供了一套性能优良、使用方便的接口和类，它们 位于java.util包中</p>
+</blockquote>
+<p><img src="/image/java%E5%AE%B9%E5%99%A8/image-20210911151416298.png" alt="image-20210911151416298"></p>
+<span id="more"></span>
+
+<h3 id="Collection接口的常用方法"><a href="#Collection接口的常用方法" class="headerlink" title="Collection接口的常用方法"></a>Collection接口的常用方法</h3><ul>
+<li><p>集合作为容器应该具有的功能（增，删，改，查）， </p>
+</li>
+<li><p>不一定全有。 </p>
+</li>
+<li><p>集合的基本操作：增加，删除，判断，取出</p>
+</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911151456833.png" alt="image-20210911151456833"></p>
+<h3 id="List不Set接口"><a href="#List不Set接口" class="headerlink" title="List不Set接口"></a>List不Set接口</h3><ul>
+<li><p>Collection 接口存储一组不唯一，无序的对象</p>
+</li>
+<li><p>List 接口存储一组丌唯一，有序（插入顺序）的对象 </p>
+</li>
+<li><p>Set 接口存储一组唯一，无序的对象 </p>
+</li>
+<li><p>Map接口存储一组键值对象，提供key到value的映射</p>
+</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911151554697.png" alt="image-20210911151554697"></p>
+<h3 id="List接口的实现类"><a href="#List接口的实现类" class="headerlink" title="List接口的实现类"></a>List接口的实现类</h3><ul>
+<li>List特点:有序，不唯一（可重复）</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911151636377.png" alt="image-20210911151636377"></p>
+<ul>
+<li><p>ArrayList实现了长度可变的数组，在内存中分配连续的空间。</p>
+<p>– 优点：遍历元素和随机访问元素的效率比较高</p>
+<p>– 缺点：添加和删除需要大量移动元素效率低，按照内容查询效 率低</p>
+</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911153039564.png" alt="image-20210911153039564"></p>
+<ul>
+<li><p>LinkedList采用链表存储方式。</p>
+<p>– 优点：插入、删除元素时效率比较高</p>
+<p>– 缺点：遍历和随机访问元素效率低下</p>
+</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911153103807.png" alt="image-20210911153103807"></p>
+<h3 id="List接口特有的方法"><a href="#List接口特有的方法" class="headerlink" title="List接口特有的方法"></a>List接口特有的方法</h3><ul>
+<li>凡是可以操作索引的方法都是该体系特有方法</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911153348816.png" alt="image-20210911153348816"></p>
+<h3 id="Iterator-接口"><a href="#Iterator-接口" class="headerlink" title="Iterator 接口"></a>Iterator 接口</h3><ul>
+<li><p>所有实现了Collection接口的容器类都有一个iterator方法用以返 回一个实现了Iterator接口的对象。</p>
+</li>
+<li><p>Iterator对象称作迭代器，用以方便的实现对容器内元素的遍历操作。 </p>
+</li>
+<li><p>Iterator接口定义了如下方法：</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">hasNext</span><span class="params">()</span></span>; <span class="comment">//判断是否有元素没有被遍历</span></span><br><span class="line"><span class="function">Object <span class="title">next</span><span class="params">()</span></span>;  <span class="comment">//返回游标当前位置的元素并将游标移动到下一个位置</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">()</span></span>; <span class="comment">//删除游标左面的元素，在执行完next之后该</span></span><br><span class="line">							 <span class="comment">//操作只能执行一次</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911153518272.png" alt="image-20210911153518272"></p>
+<ul>
+<li><p>所有的集合类均未提供相应的遍历方法，而是把遍历交给迭代器 完成。迭代器为集合而生，与门实现集合遍历</p>
+</li>
+<li><p>Iterator是迭代器设计模式的具体实现 </p>
+</li>
+<li><p>Iterator方法</p>
+<p>– boolean hasNext():判断是否存在另一个可访问的元素</p>
+<p>– Object next():返回要访问的下一个元素</p>
+<p>– void remove():删除上次访问返回的对象</p>
+</li>
+<li><p>可以使用Iterator遍历的本质是什么？ </p>
+<p>– 实现Iterable接口</p>
+</li>
+<li><p>For-each循环</p>
+<p>–增强的for循环，遍历array或Collection的时候相当简便</p>
+<p>–无需获得集合和数组的长度，无需使用索引访问元素，无需循环条件</p>
+<p>–遍历集合时底层调用Iterator完成操作 </p>
+</li>
+<li><p>For-each缺陷</p>
+<p>–数组： </p>
+<p>​    ▪ 不能方便的访问下标值 </p>
+<p>​    ▪ 不要在for-each中尝试对变量赋值，只是一个临时变量</p>
+<p>–集合： </p>
+<p>​    ▪ 不使用Iterator相比，不能方便 的删除集合中的内容 </p>
+<p>​    ▪ For-each总结</p>
+<p>​        –除了简单的遍历并读出其中的内容外，不建议使用增强for</p>
+</li>
+</ul>
+<h3 id="为什么需要ListIterator"><a href="#为什么需要ListIterator" class="headerlink" title="为什么需要ListIterator"></a>为什么需要ListIterator</h3><ul>
+<li>在迭代过程中，准备添加或者删除元素</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">ArrayList al=<span class="keyword">new</span> ArrayList(); </span><br><span class="line">al.add(<span class="string">&quot;java1&quot;</span>);<span class="comment">//添加元素 </span></span><br><span class="line">al.add(<span class="string">&quot;java2&quot;</span>); </span><br><span class="line">al.add(<span class="string">&quot;java3&quot;</span>); </span><br><span class="line"><span class="comment">//遍历 </span></span><br><span class="line">Iterator it=al.iterator(); </span><br><span class="line"><span class="keyword">while</span>(it.hasNext())&#123;</span><br><span class="line">	Object obj=it.next();</span><br><span class="line"><span class="keyword">if</span> (obj.equals(<span class="string">&quot;java2&quot;</span>)) &#123; </span><br><span class="line">  al.add(<span class="string">&quot;java9&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">	sop(<span class="string">&quot;obj=&quot;</span>+obj); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="ListIterator的作用"><a href="#ListIterator的作用" class="headerlink" title="ListIterator的作用"></a>ListIterator的作用</h3><blockquote>
+<p>解决并发操作异常</p>
+</blockquote>
+<ul>
+<li><p>在迭代时，不可能通过集合对象的方法(al.add(?))操作集合中的元素，</p>
+</li>
+<li><p>会发生并发修改异常。</p>
+</li>
+<li><p>所以，在迭代时只能通过迭代器的方法操作元素，但是Iterator的方法</p>
+</li>
+<li><p>是有限的，只能进行判断(hasNext)，取出(next),删除(remove)的操作， </p>
+</li>
+<li><p>如果想要在迭代的过程中进行向集合中添加，修改元素等就需要使用 </p>
+</li>
+<li><p>ListIterator接口中的方法</p>
+</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154156761.png" alt="image-20210911154156761"></p>
+<h3 id="List接口的实现类LinkedList"><a href="#List接口的实现类LinkedList" class="headerlink" title="List接口的实现类LinkedList"></a>List接口的实现类LinkedList</h3><ul>
+<li>linkedList特有的方法</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154224151.png" alt="image-20210911154224151"></p>
+<h3 id="ArrayList和LinkedList总结"><a href="#ArrayList和LinkedList总结" class="headerlink" title="ArrayList和LinkedList总结"></a>ArrayList和LinkedList总结</h3><ul>
+<li><p>ArrayList</p>
+<p>– 遍历元素和随机访问元素的效率比较高</p>
+<p>– 插入、删除等操作频繁时性能低下</p>
+</li>
+<li><p>LinkedList</p>
+<p>– 插入、删除元素时效率较高</p>
+<p>– 查找效率较低</p>
+</li>
+</ul>
+<h3 id="Set接口中的实现类"><a href="#Set接口中的实现类" class="headerlink" title="Set接口中的实现类"></a>Set接口中的实现类</h3><ul>
+<li><p>Set接口</p>
+<p>– Set接口存储一组唯一，无序的对象</p>
+<p>– （存入和取出的顺序丌一定一致）</p>
+<p>– 操作数据的方法不List类似，Set接口丌存在get()方法</p>
+</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154400579.png" alt="image-20210911154400579"></p>
+<ul>
+<li><p>HashSet:采用Hashtable哈希表存储结构</p>
+<p>–优点：添加速度快，查询速度快，删除速度快</p>
+<p>–缺点：无序</p>
+<p>–LinkedHashSet</p>
+<p>​     ▪ 采用哈希表存储结构，同时使用链表维护次序</p>
+<p>​     ▪ 有序（添加顺序）</p>
+</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154444872.png" alt="image-20210911154444872"></p>
+<ul>
+<li><p>TreeSet</p>
+<p>– 采用二叉树（红黑树）的存储结构</p>
+<p>– 优点：有序（排序后的升序）查询速度比List快</p>
+<p>– 缺点：查询速度没有HashSet快</p>
+</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154514559.png" alt="image-20210911154514559"></p>
+<h3 id="Hash表原理"><a href="#Hash表原理" class="headerlink" title="Hash表原理"></a>Hash表原理</h3><p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154531179.png" alt="image-20210911154531179"></p>
+<h3 id="Hash表"><a href="#Hash表" class="headerlink" title="Hash表"></a>Hash表</h3><ul>
+<li><p>代码验证HashSet的无序性不唯一性</p>
+</li>
+<li><p>使用HashSet存储自定义对象，重写hashCode方法不equals方法</p>
+</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911154607066.png" alt="image-20210911154607066"></p>
+<h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><ul>
+<li>关键代码</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">HashSet hs=<span class="keyword">new</span> HashSet();<span class="comment">//创建HashSet对象 </span></span><br><span class="line">hs.add(<span class="keyword">new</span> Person(<span class="string">&quot;张三&quot;</span>,<span class="number">20</span>)); </span><br><span class="line">hs.add(<span class="keyword">new</span> Person(<span class="string">&quot;李四&quot;</span>,<span class="number">22</span>)); </span><br><span class="line">hs.add(<span class="keyword">new</span> Person(<span class="string">&quot;王五&quot;</span>,<span class="number">23</span>)); </span><br><span class="line">hs.add(<span class="keyword">new</span> Person(<span class="string">&quot;李四&quot;</span>,<span class="number">22</span>));</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>HashSet存储进了相同的对象，不符合实际情况</p>
+</li>
+<li><p>解决方案： </p>
+</li>
+<li><p>重写equals方法不hashCode方法</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	System.out.println(<span class="keyword">this</span>.name+<span class="string">&quot;.....hashCode&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">60</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>hashCode都相同，不符合实际情况，继续升级</p>
+</li>
+<li><p>修改hashCode方法</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	System.out.println(<span class="keyword">this</span>.name+<span class="string">&quot;.....hashCode&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.name.hashCode()+age; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="HashSet总结"><a href="#HashSet总结" class="headerlink" title="HashSet总结"></a>HashSet总结</h3><ul>
+<li><p>HashSet是如何保证元素的唯一性的呢?</p>
+</li>
+<li><p>答:是通过元素的两个方法,hashCode和equals方法来完成</p>
+</li>
+<li><p>如果元素的HashCode值相同，才会判断equals是否为true</p>
+</li>
+<li><p>如果元素的hashCode值不同，不会调用equals方法</p>
+</li>
+</ul>
+<h3 id="TreeSet"><a href="#TreeSet" class="headerlink" title="TreeSet"></a>TreeSet</h3><ul>
+<li><p>TreeSet</p>
+<p>– 采用二叉树（红黑树）的存储结构</p>
+<p>– 优点：有序（排序后的升序）查询速度比List快</p>
+<p>– 缺点：查询速度没有HashSet快</p>
+</li>
+</ul>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911161045749.png" alt="image-20210911161045749"></p>
+<h3 id="Comparable-接口"><a href="#Comparable-接口" class="headerlink" title="Comparable 接口"></a>Comparable 接口</h3><ul>
+<li><p>问题：上面的算法根据什么确定集合中对象的“大小”顺序？</p>
+</li>
+<li><p>所有可以“排序”的类都实现了java.lang.Comparable 接口， Comparable接口中只有一个方法</p>
+<p>public int compareTo(Object obj)； 该方法:</p>
+<p><img src="/Users/mayingyi/03.Blog/blog/image/java%E5%AE%B9%E5%99%A8/image-20210911161200450.png" alt="image-20210911161200450"></p>
+</li>
+<li><p>实现了Comparable 接口的类通过实现 comparaTo 方法从而确定 该类对象的排序方式。</p>
+</li>
+</ul>
+<h3 id="sort排序"><a href="#sort排序" class="headerlink" title="sort排序"></a>sort排序</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StrLenComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">String</span>&gt; </span>&#123;</span><br><span class="line">	<span class="meta">@Override</span> </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(String o1, String o2)</span> </span>&#123; </span><br><span class="line">    <span class="keyword">if</span> (o1.length()&gt;o2.length()) &#123; </span><br><span class="line">      	<span class="keyword">return</span> <span class="number">1</span>; </span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span> (o1.length()&lt;o2.length()) &#123; </span><br><span class="line">      	<span class="keyword">return</span> -<span class="number">1</span>; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> o1.compareTo(o2);<span class="comment">//长度相同，按字母</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sortDemo</span><span class="params">()</span></span>&#123;</span><br><span class="line">	List&lt;String&gt; list=<span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">  ..添加元素 </span><br><span class="line">  sop(list); 		</span><br><span class="line">  Collections.sort(list);<span class="comment">//按字母排序 </span></span><br><span class="line">  sop(list); <span class="comment">//按照字符串长度排序 </span></span><br><span class="line">  Collections.sort(list,<span class="keyword">new</span> StrLenComparator()); </span><br><span class="line">  sop(list);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><ul>
+<li><p>为什么需要泛型 </p>
+<p>​    解决数据类型操作不统一产生的异常</p>
+<p>​    使用泛型可以更好的去保护数据类型 </p>
+</li>
+<li><p>泛型类的定义</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Point2</span>&lt;<span class="title">T</span>&gt; </span>&#123;<span class="comment">//此处可以随便写标识符号,T是type的简称,也可以写a,b,c</span></span><br><span class="line">	<span class="keyword">private</span> T <span class="keyword">var</span>;<span class="comment">//var的类型由T指写,由外部指定</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> T <span class="title">getVar</span><span class="params">()</span> </span>&#123;<span class="comment">//返回值的类型由外部指定 return var;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setVar</span><span class="params">(T <span class="keyword">var</span>)</span> </span>&#123;<span class="comment">//参数的类型由外部指定 </span></span><br><span class="line">    <span class="keyword">this</span>.<span class="keyword">var</span> = <span class="keyword">var</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="泛型类的定义"><a href="#泛型类的定义" class="headerlink" title="泛型类的定义"></a>泛型类的定义</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Notepad</span>&lt;<span class="title">K</span>,<span class="title">V</span>&gt; </span>&#123;<span class="comment">// 此处指定了两个泛型</span></span><br><span class="line">	<span class="keyword">private</span> K key;<span class="comment">//此变量的类型由外部决定</span></span><br><span class="line">	<span class="keyword">private</span> V value;<span class="comment">//此变量的类型由外部决定 …..</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Notepad&lt;String,Integer&gt;t=<span class="keyword">null</span>;<span class="comment">//指定两个泛型类型的对象 </span></span><br><span class="line">  <span class="comment">//Key为String,Value为Integer </span></span><br><span class="line">  t=<span class="keyword">new</span> Notepad&lt;String,Integer&gt;(); </span><br><span class="line">  t.setKey(<span class="string">&quot;张三&quot;</span>); </span><br><span class="line">  t.setValue(<span class="number">30</span>); </span><br><span class="line">System.out.println(<span class="string">&quot;姓名:&quot;</span>+t.getKey()+<span class="string">&quot;\t年龄:&quot;</span>+t.getValue());</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用泛型集合解决实际问题"><a href="#使用泛型集合解决实际问题" class="headerlink" title="使用泛型集合解决实际问题"></a>使用泛型集合解决实际问题</h3><p>▪ 声明员工类Employee包含如下属性:id,name,age,gender(枚举类型)</p>
+<p>▪ 声明程序员类SE,含有属性popularity人气值</p>
+<p>▪ 声明项目经理类PM,含有属性workOfYear工作年限 </p>
+<p>▪ 程序员不项目前经理都继承自Employee </p>
+<p>▪ 需求说明:</p>
+<p>​    ▪ 使用泛型集合ArrayList,LinkedList,HashSet,TreeSet完成员工的添加， 删除， </p>
+<p>​    ▪ 判断，集合中元素个数的判断</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/09/10/java/java%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" rel="prev" title="java异常处理">
+                  <i class="fa fa-chevron-left"></i> java异常处理
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yingyi.ma</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script class="next-config" data-name="leancloud_visitors" type="application/json">{"enable":true,"app_id":"am4Wzfsleq7gV9sfLTpB3PBp-gzGzoHsz","app_key":"LxR92MgssqJismWX7550FPRE","server_url":"https://am4wzfsl.lc-cn-n1-shared.com","security":true}</script>
+  <script src="/js/third-party/statistics/lean-analytics.js"></script>
+
+
+
+</body>
+</html>
