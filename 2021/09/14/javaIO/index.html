@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/forest.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/forest.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/forest.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="baidu-site-verification" content="code-o1gdvcr4pe">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<meta name="description" content="IO文件 相关记录或放在一起的数据的集合  JAVA程序如何访问文件属性1File file &#x3D; new File(pathname);   File类的常用方法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaIO">
+<meta property="og:url" content="http://example.com/2021/09/14/javaIO/index.html">
+<meta property="og:site_name" content="Little Forest">
+<meta property="og:description" content="IO文件 相关记录或放在一起的数据的集合  JAVA程序如何访问文件属性1File file &#x3D; new File(pathname);   File类的常用方法">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914152444830.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914152532501.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914152630777.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914152712730.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914152944901.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914153001590.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914153555872.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914153639725.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914153710266.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914153746669.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914153956831.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914154038829.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914154230144.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914154423104.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914154550959.png">
+<meta property="og:image" content="http://example.com/image/javaIO/image-20210914155005420.png">
+<meta property="article:published_time" content="2021-09-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-14T08:02:57.909Z">
+<meta property="article:author" content="Yingyi.ma">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/image/javaIO/image-20210914152444830.png">
+
+
+<link rel="canonical" href="http://example.com/2021/09/14/javaIO/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/14/javaIO/","path":"2021/09/14/javaIO/","title":"javaIO"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>javaIO | Little Forest</title>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Little Forest</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">夏天 永不结束</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IO"><span class="nav-number">1.</span> <span class="nav-text">IO</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#JAVA%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95%E8%AE%BF%E9%97%AE%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7"><span class="nav-number">1.1.1.</span> <span class="nav-text">JAVA程序如何访问文件属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.</span> <span class="nav-text">流的基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%86%99"><span class="nav-number">1.3.</span> <span class="nav-text">文件的读写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8FileInputStream-%E8%AF%BB%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">使用FileInputStream 读文本文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8FileOutputStream-%E5%86%99%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-number">1.5.</span> <span class="nav-text">使用FileOutputStream 写文本文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E6%B5%81%E8%AF%BB%E5%86%99%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6"><span class="nav-number">1.6.</span> <span class="nav-text">使用字符流读写文件文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8FileReader%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"><span class="nav-number">1.7.</span> <span class="nav-text">使用FileReader读取文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BufferedReader%E7%B1%BB"><span class="nav-number">1.8.</span> <span class="nav-text">BufferedReader类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-BufferedReader-%E8%AF%BB%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-number">1.9.</span> <span class="nav-text">使用 BufferedReader 读文本文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8FileWriter%E5%86%99%E6%96%87%E4%BB%B6"><span class="nav-number">1.10.</span> <span class="nav-text">使用FileWriter写文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BufferedWriter%E7%B1%BB"><span class="nav-number">1.11.</span> <span class="nav-text">BufferedWriter类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-BufferedWriter-%E5%86%99%E6%96%87%E4%BB%B6"><span class="nav-number">1.12.</span> <span class="nav-text">使用 BufferedWriter 写文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reader%E4%B8%8DWriter%E7%9A%84%E7%BC%96%E7%A0%81%E6%96%B9%E5%BC%8F"><span class="nav-number">1.13.</span> <span class="nav-text">Reader不Writer的编码方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E5%87%86%E7%9A%84%E8%BE%93%E5%85%A5%E8%BE%93%E5%85%A5%E5%87%BA%E6%B5%81System-in-System-out"><span class="nav-number">1.14.</span> <span class="nav-text">标准的输入输入出流System.in,System.out</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%B5%81"><span class="nav-number">1.15.</span> <span class="nav-text">操作对象的流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">1.16.</span> <span class="nav-text">常见问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%9A%84%E6%B5%81%E5%AF%B9%E8%B1%A1DataStream"><span class="nav-number">1.17.</span> <span class="nav-text">操作基本数据的流对象DataStream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">1.18.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Yingyi.ma</p>
+  <div class="site-description" itemprop="description">(,,･∀･)ﾉ゛hello</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yy-ma" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yy-ma" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:yingyi.ma@aliyun.com" title="E-Mail → mailto:yingyi.ma@aliyun.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/14/javaIO/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Yingyi.ma">
+      <meta itemprop="description" content="(,,･∀･)ﾉ゛hello">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Little Forest">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          javaIO
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-09-14 00:00:00 / 修改时间：16:02:57" itemprop="dateCreated datePublished" datetime="2021-09-14T00:00:00+08:00">2021-09-14</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/JAVA/" itemprop="url" rel="index"><span itemprop="name">JAVA</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="IO"><a href="#IO" class="headerlink" title="IO"></a>IO</h2><h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><blockquote>
+<p>相关记录或放在一起的数据的集合</p>
+</blockquote>
+<h4 id="JAVA程序如何访问文件属性"><a href="#JAVA程序如何访问文件属性" class="headerlink" title="JAVA程序如何访问文件属性"></a>JAVA程序如何访问文件属性</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File file = <span class="keyword">new</span> File(pathname);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>File类的常用方法</li>
+</ul>
+<p><img src="/image/javaIO/image-20210914152444830.png" alt="image-20210914152444830"></p>
+<span id="more"></span>
+<h3 id="流的基本概念"><a href="#流的基本概念" class="headerlink" title="流的基本概念"></a>流的基本概念</h3><blockquote>
+<p>​        流是指一连串流动的字符,是以先进先出方式发送信息的通道</p>
+</blockquote>
+<p><img src="/image/javaIO/image-20210914152532501.png" alt="image-20210914152532501"></p>
+<ul>
+<li>输入/输出流与数据源 </li>
+<li>XXX-&gt;程序–&gt;输入流</li>
+</ul>
+<p><img src="/image/javaIO/image-20210914152630777.png" alt="image-20210914152630777"></p>
+<ul>
+<li>程序-&gt;XXX–&gt;输出流</li>
+</ul>
+<p><img src="/image/javaIO/image-20210914152712730.png" alt="image-20210914152712730"></p>
+<ul>
+<li>数据源</li>
+</ul>
+<p>data source. 提供原始数据的原始媒介。常见的：数据库、文件、其他程序、内存、网络连接、IO设备。数据源就像水箱，流就像水管，中流着的水流，程序就是我们最终的用户。 流是一个抽象、动态的概念，是一连串连续动态的数据集合。</p>
+<ul>
+<li>Java流的分类</li>
+</ul>
+<p><img src="/image/javaIO/image-20210914152944901.png" alt="image-20210914152944901"></p>
+<p>输入输出流是相对于计算机内存来说的,而不是相对于源和目标</p>
+<p><img src="/image/javaIO/image-20210914153001590.png" alt="image-20210914153001590"></p>
+<p>字节流是 8 位通用字节流，字符流是 16 位 Unicode 字符流</p>
+<ul>
+<li><p>功能不同</p>
+<p>– 节点流：可以直接从数据源或目的地读写数据。</p>
+<p>– 处理流（包装流）：不直接连接到数据源或目的地，是其他流进行封装。目 的主要是简化操作和提高性能。 </p>
+</li>
+<li><p>节点流和处理流的关系</p>
+<p>– 节点流处于io操作的第一线，所有操作必须通过他们进行</p>
+<p>– 处理流可以对其他流进行处理（提高效率或操作灵活性）</p>
+</li>
+</ul>
+<h3 id="文件的读写"><a href="#文件的读写" class="headerlink" title="文件的读写"></a>文件的读写</h3><ul>
+<li><p>文本文件的读写</p>
+<p>– 用FileInputStream和FileOutputStream读写文本文件</p>
+<p>– 用BufferedReader和BufferedWriter读写文本文件</p>
+</li>
+<li><p>二进制文件的读写</p>
+<p>– 使用DataInputStream和DataOutputStream读写二进制文件以及 基本数据类型数据的读写</p>
+</li>
+<li><p>对象的读写</p>
+<p>– 使用ObjectInputStream和ObjectOutputStream读写对象(序列 化与反序列化)</p>
+</li>
+</ul>
+<h3 id="使用FileInputStream-读文本文件"><a href="#使用FileInputStream-读文本文件" class="headerlink" title="使用FileInputStream 读文本文件"></a>使用FileInputStream 读文本文件</h3><p><img src="/image/javaIO/image-20210914153555872.png" alt="image-20210914153555872"></p>
+<h3 id="使用FileOutputStream-写文本文件"><a href="#使用FileOutputStream-写文本文件" class="headerlink" title="使用FileOutputStream 写文本文件"></a>使用FileOutputStream 写文本文件</h3><p><img src="/image/javaIO/image-20210914153639725.png" alt="image-20210914153639725"></p>
+<h3 id="使用字符流读写文件文件"><a href="#使用字符流读写文件文件" class="headerlink" title="使用字符流读写文件文件"></a>使用字符流读写文件文件</h3><p><img src="/image/javaIO/image-20210914153710266.png" alt="image-20210914153710266"></p>
+<h3 id="使用FileReader读取文件"><a href="#使用FileReader读取文件" class="headerlink" title="使用FileReader读取文件"></a>使用FileReader读取文件</h3><p><img src="/image/javaIO/image-20210914153746669.png" alt="image-20210914153746669"></p>
+<h3 id="BufferedReader类"><a href="#BufferedReader类" class="headerlink" title="BufferedReader类"></a>BufferedReader类</h3><p>如何提高字符流读取文本文件的效率？ </p>
+<ul>
+<li>使用FileReader类与BufferedReader类</li>
+</ul>
+<p>BufferedReader类是Reader类的子类 BufferedReader类带有缓冲区 按行读取内容的readLine()方法（BufferedReader类特有的方法）</p>
+<h3 id="使用-BufferedReader-读文本文件"><a href="#使用-BufferedReader-读文本文件" class="headerlink" title="使用 BufferedReader 读文本文件"></a>使用 BufferedReader 读文本文件</h3><p><img src="/image/javaIO/image-20210914153956831.png" alt="image-20210914153956831"></p>
+<ul>
+<li>通过字符流的方式读取文件，并使用缓冲区，提高读文本文件的效率</li>
+</ul>
+<h3 id="使用FileWriter写文件"><a href="#使用FileWriter写文件" class="headerlink" title="使用FileWriter写文件"></a>使用FileWriter写文件</h3><p><img src="/image/javaIO/image-20210914154038829.png" alt="image-20210914154038829"></p>
+<h3 id="BufferedWriter类"><a href="#BufferedWriter类" class="headerlink" title="BufferedWriter类"></a>BufferedWriter类</h3><ul>
+<li><p>如何提高字符流写文本文件的效率？ </p>
+<p>​    使用FileWriter类与BufferedWriter类</p>
+</li>
+<li><p>BufferedWriter类是Writer类的子类 </p>
+</li>
+<li><p>BufferedWriter类带有缓冲区</p>
+</li>
+</ul>
+<h3 id="使用-BufferedWriter-写文件"><a href="#使用-BufferedWriter-写文件" class="headerlink" title="使用 BufferedWriter 写文件"></a>使用 BufferedWriter 写文件</h3><p><img src="/image/javaIO/image-20210914154230144.png" alt="image-20210914154230144"></p>
+<h3 id="Reader不Writer的编码方式"><a href="#Reader不Writer的编码方式" class="headerlink" title="Reader不Writer的编码方式"></a>Reader不Writer的编码方式</h3><ul>
+<li><p>获得当前开发环境的字符编码方式</p>
+</li>
+<li><p>System.out.println(System.getProperty(“file.encoding”)); </p>
+</li>
+<li><p>字符流的读写根据需要设置编码方式 </p>
+</li>
+<li><p>涉及到的类:</p>
+</li>
+<li><p>读:FileReader (File file) </p>
+</li>
+<li><p>写:FileWriter(File file) </p>
+</li>
+<li><p>加入缓冲区的读:BufferedReader(Reader fr) </p>
+</li>
+<li><p>加入缓冲区的写:BufferedWriter(Writer bw)</p>
+</li>
+</ul>
+<p><img src="/image/javaIO/image-20210914154423104.png" alt="image-20210914154423104"></p>
+<p>调用顺序与编码顺序相反 ，所以创建类的依次顺序为 FileInputStream InputStreamReader BufferedReader</p>
+<p>FileInputStream fis=new FileInputStream(“文件的路径”); </p>
+<p>InputStreamReader isr=new InputStreamReader(fis,”utf-8”); </p>
+<p>BufferedReader br=new BufferedReader(isr);</p>
+<h3 id="标准的输入输入出流System-in-System-out"><a href="#标准的输入输入出流System-in-System-out" class="headerlink" title="标准的输入输入出流System.in,System.out"></a>标准的输入输入出流System.in,System.out</h3><ul>
+<li>Scanner input=new Scanner(System.in);</li>
+</ul>
+<p><img src="/image/javaIO/image-20210914154550959.png" alt="image-20210914154550959"></p>
+<h3 id="操作对象的流"><a href="#操作对象的流" class="headerlink" title="操作对象的流"></a>操作对象的流</h3><ul>
+<li><p>序列化对象:ObjectOutputStream </p>
+</li>
+<li><p>反序列化对象:ObjectInputStream </p>
+</li>
+<li><p>序列化:</p>
+<p>– ObjectOutputStream oos=new ObjectOutputStream(new FileOutputStream(“obj.txt”));</p>
+<p>– oos.writeObject(new Person(“张三”,19));// 序列化</p>
+<p>– oos.close();</p>
+</li>
+<li><p>反序列化:</p>
+<p>– ObjectInputStream ois=new ObjectInputStream(new FileInputStream(“obj.txt”));</p>
+<p>– Person p=(Person)ois.readObject();//反序列化</p>
+<p>– System.out.println(p);</p>
+</li>
+</ul>
+<h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><p>1、类必须实现Serializable接口 </p>
+<p>2、给类加个序列化编号，给类定义一个标记，</p>
+<p>新的修改后的类还可以操作曾经序列化的对象 </p>
+<p>3、静态是丌能被序列化的，</p>
+<p>序列化只能对堆中的进行序列化 ，不能对“方</p>
+<p>法区”中的进行序列化 </p>
+<p>4、不需要序列化的字段前加 transient</p>
+<h3 id="操作基本数据的流对象DataStream"><a href="#操作基本数据的流对象DataStream" class="headerlink" title="操作基本数据的流对象DataStream"></a>操作基本数据的流对象DataStream</h3><p>写入数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DataOutputStream dos=<span class="keyword">new</span> DataOutputStream(<span class="keyword">new</span> FileOutputStream(<span class="string">&quot;data.txt&quot;</span>)); </span><br><span class="line">dos.writeInt(<span class="number">234</span>); </span><br><span class="line">dos.writeBoolean(<span class="keyword">false</span>); </span><br><span class="line">dos.writeDouble(<span class="number">9943.00</span>); </span><br><span class="line">dos.writeUTF(<span class="string">&quot;中国&quot;</span>);</span><br><span class="line">dos.close();</span><br></pre></td></tr></table></figure>
+
+<p>读取数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">DataInputStream dis=<span class="keyword">new</span> DataInputStream(<span class="keyword">new</span> FileInputStream(<span class="string">&quot;data.txt&quot;</span>)); </span><br><span class="line"><span class="keyword">int</span> num=dis.readInt(); </span><br><span class="line"><span class="keyword">boolean</span> isFind=dis.readBoolean(); </span><br><span class="line"><span class="keyword">double</span> price=dis.readDouble(); </span><br><span class="line">String str=dis.readUTF();</span><br><span class="line">System.out.println(num+<span class="string">&quot;\t&quot;</span>+isFind+<span class="string">&quot;\t&quot;</span>+price+<span class="string">&quot;\t&quot;</span>+str);</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>文本操作: FileReader, FileWriter </p>
+<p>字符操作: FileInputStream, FileOutputStream </p>
+<p>基本数据类型操作:DataInputStream, DataOutputStream </p>
+<p>操作对象: ObjectInputStream ,ObjectOutputStream</p>
+<p><img src="/image/javaIO/image-20210914155005420.png" alt="image-20210914155005420"></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/09/11/java%E5%AE%B9%E5%99%A8/" rel="prev" title="java容器">
+                  <i class="fa fa-chevron-left"></i> java容器
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yingyi.ma</span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
