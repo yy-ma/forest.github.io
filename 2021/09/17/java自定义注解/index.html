@@ -21,27 +21,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="lambda表达式的使用1、Lambda表达式概念lambda表达式可以替代只有一个抽象函数的接口实现，告别匿名内部类，代码看起来更简洁易懂 lambda表达式同时还提升了对集合、框架的迭代、遍历、过滤数据的操作 lambda可以极大的减少代码冗余，同时代码的可读性要好过冗长的内部类，匿名类">
+<meta name="description" content="什么是注解 Annontation是Java5开始引入的新特征，中文名称叫注解。   它提供了一种安全的类似注释的机制，用来将任何的信息或元数据（metadata）与程序 元素（类、方法、成员变量等）进行关联。   为程序的元素（类、方法、成员变量）加上更直观更明了的说明，这些说明信息是与程序的业务逻辑无关，并且供指定的工具或框架使用。  Annontation像一种修饰符一样，应用于包、类型、构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lambda表达式的使用">
-<meta property="og:url" content="http://example.com/2021/09/02/java/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="Java自定义注解">
+<meta property="og:url" content="http://example.com/2021/09/17/java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Little Forest">
-<meta property="og:description" content="lambda表达式的使用1、Lambda表达式概念lambda表达式可以替代只有一个抽象函数的接口实现，告别匿名内部类，代码看起来更简洁易懂 lambda表达式同时还提升了对集合、框架的迭代、遍历、过滤数据的操作 lambda可以极大的减少代码冗余，同时代码的可读性要好过冗长的内部类，匿名类">
+<meta property="og:description" content="什么是注解 Annontation是Java5开始引入的新特征，中文名称叫注解。   它提供了一种安全的类似注释的机制，用来将任何的信息或元数据（metadata）与程序 元素（类、方法、成员变量等）进行关联。   为程序的元素（类、方法、成员变量）加上更直观更明了的说明，这些说明信息是与程序的业务逻辑无关，并且供指定的工具或框架使用。  Annontation像一种修饰符一样，应用于包、类型、构">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-09-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-06T03:39:20.230Z">
+<meta property="article:published_time" content="2021-09-16T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-09-17T06:01:45.998Z">
 <meta property="article:author" content="Yingyi.ma">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2021/09/02/java/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/">
+<link rel="canonical" href="http://example.com/2021/09/17/java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/02/java/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/","path":"2021/09/02/java/lambda表达式的使用/","title":"lambda表达式的使用"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/17/java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/","path":"2021/09/17/java自定义注解/","title":"Java自定义注解"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>lambda表达式的使用 | Little Forest</title>
+<title>Java自定义注解 | Little Forest</title>
   
 
 
@@ -119,7 +119,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">lambda表达式的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A6%82%E5%BF%B5"><span class="nav-number">1.0.1.</span> <span class="nav-text">1、Lambda表达式概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="nav-number">1.0.2.</span> <span class="nav-text">2、lambda表达式的语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A1%88%E4%BE%8B"><span class="nav-number">1.0.3.</span> <span class="nav-text">3、表达式案例</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%B3%A8%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">什么是注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">注解的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%8E%9F%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">注解的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%85%E7%BD%AE%E6%B3%A8%E8%A7%A3"><span class="nav-number">4.</span> <span class="nav-text">内置注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E6%B3%A8%E8%A7%A3"><span class="nav-number">5.</span> <span class="nav-text">元注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3"><span class="nav-number">6.</span> <span class="nav-text">自定义注解</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -185,7 +185,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/02/java/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/17/java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -198,7 +198,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          lambda表达式的使用
+          Java自定义注解
         </h1>
 
         <div class="post-meta-container">
@@ -208,16 +208,10 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2021-09-02 00:00:00" itemprop="dateCreated datePublished" datetime="2021-09-02T00:00:00+08:00">2021-09-02</time>
+      <time title="创建时间：2021-09-17 00:00:00 / 修改时间：14:01:45" itemprop="dateCreated datePublished" datetime="2021-09-17T00:00:00+08:00">2021-09-17</time>
     </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-09-06 11:39:20" itemprop="dateModified" datetime="2021-09-06T11:39:20+08:00">2021-09-06</time>
-      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -238,24 +232,65 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="lambda表达式的使用"><a href="#lambda表达式的使用" class="headerlink" title="lambda表达式的使用"></a>lambda表达式的使用</h1><h3 id="1、Lambda表达式概念"><a href="#1、Lambda表达式概念" class="headerlink" title="1、Lambda表达式概念"></a>1、Lambda表达式概念</h3><p>lambda表达式可以替代只有一个抽象函数的接口实现，告别匿名内部类，代码看起来更简洁易懂</p>
-<p>lambda表达式同时还提升了对集合、框架的迭代、遍历、过滤数据的操作</p>
-<p>lambda可以极大的减少代码冗余，同时代码的可读性要好过冗长的内部类，匿名类</p>
+        <h3 id="什么是注解"><a href="#什么是注解" class="headerlink" title="什么是注解"></a>什么是注解</h3><ul>
+<li><p>Annontation是Java5开始引入的新特征，中文名称叫注解。 </p>
+</li>
+<li><p>它提供了一种安全的类似注释的机制，用来将任何的信息或元数据（metadata）与程序 元素（类、方法、成员变量等）进行关联。 </p>
+</li>
+<li><p>为程序的元素（类、方法、成员变量）加上更直观更明了的说明，这些说明信息是与程序的业务逻辑无关，并且供指定的工具或框架使用。</p>
+</li>
+<li><p>Annontation像一种修饰符一样，应用于包、类型、构造方法、方法、成员变量、参数 及本地变量的声明语句中。</p>
+</li>
+<li><p>Java注解是附加在代码中的一些元信息，用于一些工具在编译、运行时进行解析和使用， 起到说明、配置的功能。 </p>
+</li>
+<li><p>注解不会也不能影响代码的实际逻辑，仅仅起到辅助性的作用。包含在 java.lang.annotation 包中。</p>
+</li>
+</ul>
 <span id="more"></span>
-<h3 id="2、lambda表达式的语法"><a href="#2、lambda表达式的语法" class="headerlink" title="2、lambda表达式的语法"></a>2、lambda表达式的语法</h3><p>​        LambdaParameters -&gt; LambdaBody</p>
-<p>​        args-&gt;expr或者（object … args）-&gt;{函数式接口抽象方法实现逻辑}</p>
-<p>​        1、（）参数的个数，根据函数式接口里面抽象的参数个数来决定，当参数只有一个的时候，（）可以省略</p>
-<p>​        2、当expr逻辑非常简单的时候，{}和return可以省略</p>
-<h3 id="3、表达式案例"><a href="#3、表达式案例" class="headerlink" title="3、表达式案例"></a>3、表达式案例</h3><p>​        ()-&gt;{}</p>
-<p>​        ()-&gt;{System.out.println(1);}</p>
-<p>​        ()-&gt;System.out.println(1)</p>
-<p>​        ()-&gt;{return 100;}</p>
-<p>​        ()-&gt;100</p>
-<p>​        ()-&gt;null</p>
-<p>​        (int x)-&gt;{return x+1;}</p>
-<p>​        (int x)-&gt;x+1</p>
-<p>​        (x)-&gt;x+1</p>
-<p>​        x-&gt;x+1</p>
+
+<h3 id="注解的作用"><a href="#注解的作用" class="headerlink" title="注解的作用"></a>注解的作用</h3><ul>
+<li><p>生成文档。这是最常见的，也是java 最早提供的注解。常用的有 @param @return 等 </p>
+</li>
+<li><p>跟踪代码依赖性，实现替代配置文件功能。 </p>
+</li>
+<li><p>在编译时进行格式检查。如@override 放在方法前，如果你这个方法并不是覆盖了超类方法，则编译时就能检查出。</p>
+</li>
+</ul>
+<h3 id="注解的原理"><a href="#注解的原理" class="headerlink" title="注解的原理"></a>注解的原理</h3><blockquote>
+<p><strong>反射</strong></p>
+</blockquote>
+<h3 id="内置注解"><a href="#内置注解" class="headerlink" title="内置注解"></a>内置注解</h3><ul>
+<li><p>@Override：定义在java.lang.Override中，此注释叧适用于修 饰方法，表示一个方法声明打算重写超类中的另一个方法声明 </p>
+</li>
+<li><p>@Deprecated：定义在java.lang.Deprecated中，此注释可以 修饰方法、属性、类，表示不鼓励程序员使用这样的元素，通常 是因为它很危险戒者存在更好的选择</p>
+</li>
+<li><p>@SuppressWarnings：定义在java.lang.SuppressWarnings中， 用来抑制编写编译时的警告信息</p>
+</li>
+</ul>
+<h3 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h3><ul>
+<li><p>元注解的作用是负责注解其他注解，java中定义了四个标准的meta-annotation类型，他们被用来提供对其他annotation类型 作说明</p>
+</li>
+<li><p>这些类型和它们所支持的类在java.lang.annotation包中</p>
+<p>– @Target：用来描述注解的使用范围（注解可以用在什么地方）</p>
+<p>– @Retention：表示需要在什么级别保存该注释信息，描述注解的生命周期</p>
+<p>​    ▪ Source &lt; Class &lt; Runtime</p>
+<p>– @Document：说明该注解将被包含在javadoc中</p>
+<p>– @Inherited：说明子类可以继承父类中的该注解</p>
+</li>
+</ul>
+<h3 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h3><ul>
+<li><p>使用@interfac自定义注解时，自劢继承了 java.lang.annotation.Annotation接口 </p>
+</li>
+<li><p>使用规则：</p>
+<p>– @interface用来声明一个注解，格式：public @interface 注解名{}</p>
+<p>– 其中的每一个方法实际上是声明了一个配置参数</p>
+<p>– 方法的名称就是参数的名称</p>
+<p>– 返回值类型就是参数的类型（返回值叧能是基本类型，Class,String,enum）</p>
+<p>– 可以头盖骨default来声明参数的默认值</p>
+<p>– 如果叧有一个参数成员，一般参数名为value</p>
+<p>– 注解元素必须要有值，我们定义注解元素时，经常使用空字符串，0作为默 认值</p>
+</li>
+</ul>
 
     </div>
 
@@ -269,13 +304,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/09/01/java/JDK12%E7%9A%84%E5%AE%89%E8%A3%85%E6%90%AD%E5%BB%BA/" rel="prev" title="JDK12的安装搭建">
-                  <i class="fa fa-chevron-left"></i> JDK12的安装搭建
+                <a href="/2021/09/17/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="prev" title="lambda表达式的使用">
+                  <i class="fa fa-chevron-left"></i> lambda表达式的使用
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/09/05/%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" rel="next" title="排序算法">
-                  排序算法 <i class="fa fa-chevron-right"></i>
+                <a href="/2021/09/17/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="next" title="java网络编程">
+                  java网络编程 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
