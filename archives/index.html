@@ -44,7 +44,7 @@
 
 
 
-
+<link rel="dns-prefetch" href="https://forest-blog-comments-server-f25tszv3d-yy-ma.vercel.app">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -148,6 +148,9 @@
       <span class="links-of-author-item">
         <a href="mailto:yingyi.ma@aliyun.com" title="E-Mail → mailto:yingyi.ma@aliyun.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/liffleforest" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;liffleforest" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
   </div>
 
 
@@ -220,8 +223,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/09/17/java%E7%BA%BF%E7%A8%8B%E6%B1%A0/" itemprop="url">
-            <span itemprop="name">java线程池</span>
+          <a class="post-title-link" href="/2021/09/17/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url">
+            <span itemprop="name">java网络编程</span>
           </a>
       </div>
 
@@ -280,8 +283,8 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/09/17/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" itemprop="url">
-            <span itemprop="name">java网络编程</span>
+          <a class="post-title-link" href="/2021/09/17/java%E7%BA%BF%E7%A8%8B%E6%B1%A0/" itemprop="url">
+            <span itemprop="name">java线程池</span>
           </a>
       </div>
 
@@ -451,6 +454,15 @@
 
 
 
-
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://forest-blog-comments-server-f25tszv3d-yy-ma.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/archives/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
 </body>
 </html>

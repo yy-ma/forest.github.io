@@ -29,7 +29,7 @@
 <meta property="og:description" content="缘起 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;little forest (小森林)，源于2015年看了这部日本电影《小森林》，超喜欢里面的繁茂的森林和女主在森林中恬静的生活。对小森生活总是充满幻想怀抱热望，希望有一天我也能有酱的生活，成为小森林之主。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-20T02:24:00.000Z">
-<meta property="article:modified_time" content="2021-09-18T03:10:13.066Z">
+<meta property="article:modified_time" content="2021-09-18T03:13:30.743Z">
 <meta property="article:author" content="Yingyi.ma">
 <meta name="twitter:card" content="summary">
 
@@ -47,7 +47,7 @@
 
 
 
-
+<link rel="dns-prefetch" href="https://forest-blog-comments-server-f25tszv3d-yy-ma.vercel.app">
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
@@ -152,6 +152,9 @@
       <span class="links-of-author-item">
         <a href="mailto:yingyi.ma@aliyun.com" title="E-Mail → mailto:yingyi.ma@aliyun.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/liffleforest" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;liffleforest" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
   </div>
 
 
@@ -211,6 +214,7 @@
     
 
 
+    <div class="comments" id="waline-comments"></div>
 </div>
   </main>
 
@@ -263,6 +267,15 @@
 
 
 
-
+<script class="next-config" data-name="waline" type="application/json">{"lang":"zh-cn","enable":true,"serverURL":"https://forest-blog-comments-server-f25tszv3d-yy-ma.vercel.app","placeholder":"Just go go","avatar":"mm","pageSize":10,"visitor":false,"comment_count":true,"requiredFields":[],"meta":["nick","mail","link"],"libUrl":"https://cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js","el":"#waline-comments","path":"/about/"}</script>
+<script>
+document.addEventListener('page:loaded', () => {
+  NexT.utils.loadComments(CONFIG.waline.el).then(() => 
+    NexT.utils.getScript(CONFIG.waline.libUrl, { condition: window.Waline })
+  ).then(() => {
+    new Waline(CONFIG.waline);
+  });
+});
+</script>
 </body>
 </html>
