@@ -21,31 +21,27 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="Lambda表达式介绍 Lambda表达式是 Java8 中最重要的新功能之一。使用 Lambda 表达 式可以替代只有一个抽象函数的接口实现，告别匿名内部类，代码看 起来更简洁易懂。Lambda表达式同时还提升了对集合、框架的迭代、 遍历、过滤数据的操作。  Lambda表达式特点1：函数式编程  2：参数类型自动推断  3：代码量少，简洁 lambda表达式使用1、Lambda表达式概念lam">
+<meta name="description" content="Stream A sequence of elements supporting sequential and parallel aggregate operations Stream是一组用来处理数组、集合的API   Java 8之所以费这么大功夫引入函数式编程，原因有二： – 代码简洁函数式编程写出的代码简洁且意图明确，使用stream接口让你从 此告别for循环。 – 多核友好，Java函">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lambda表达式的使用">
-<meta property="og:url" content="http://example.com/2021/09/17/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:title" content="Java Stream API">
+<meta property="og:url" content="http://example.com/2021/09/17/java/javaStreamAPI/index.html">
 <meta property="og:site_name" content="Little Forest">
-<meta property="og:description" content="Lambda表达式介绍 Lambda表达式是 Java8 中最重要的新功能之一。使用 Lambda 表达 式可以替代只有一个抽象函数的接口实现，告别匿名内部类，代码看 起来更简洁易懂。Lambda表达式同时还提升了对集合、框架的迭代、 遍历、过滤数据的操作。  Lambda表达式特点1：函数式编程  2：参数类型自动推断  3：代码量少，简洁 lambda表达式使用1、Lambda表达式概念lam">
+<meta property="og:description" content="Stream A sequence of elements supporting sequential and parallel aggregate operations Stream是一组用来处理数组、集合的API   Java 8之所以费这么大功夫引入函数式编程，原因有二： – 代码简洁函数式编程写出的代码简洁且意图明确，使用stream接口让你从 此告别for循环。 – 多核友好，Java函">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/image/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/image-20210917133640328.png">
-<meta property="og:image" content="http://example.com/image/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/image-20210917133709168.png">
-<meta property="og:image" content="http://example.com/image/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/image-20210917133848183.png">
 <meta property="article:published_time" content="2021-09-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-09-17T05:41:17.977Z">
+<meta property="article:modified_time" content="2021-09-17T06:01:45.997Z">
 <meta property="article:author" content="Yingyi.ma">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/image/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/image-20210917133640328.png">
 
 
-<link rel="canonical" href="http://example.com/2021/09/17/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/">
+<link rel="canonical" href="http://example.com/2021/09/17/java/javaStreamAPI/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/17/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/","path":"2021/09/17/lambda表达式的使用/","title":"lambda表达式的使用"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2021/09/17/java/javaStreamAPI/","path":"2021/09/17/java/javaStreamAPI/","title":"Java Stream API"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>lambda表达式的使用 | Little Forest</title>
+<title>Java Stream API | Little Forest</title>
   
 
 
@@ -124,7 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">Lambda表达式介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%89%B9%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">Lambda表达式特点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%BD%BF%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">lambda表达式使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A6%82%E5%BF%B5"><span class="nav-number">3.0.1.</span> <span class="nav-text">1、Lambda表达式概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%AF%AD%E6%B3%95"><span class="nav-number">3.0.2.</span> <span class="nav-text">2、lambda表达式的语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%A1%88%E4%BE%8B"><span class="nav-number">3.0.3.</span> <span class="nav-text">3、表达式案例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">4.</span> <span class="nav-text">Lambda表达式应用场景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3"><span class="nav-number">5.</span> <span class="nav-text">函数式接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-number">6.</span> <span class="nav-text">方法的引用</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream"><span class="nav-number">1.</span> <span class="nav-text">Stream</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream%E7%89%B9%E6%80%A7"><span class="nav-number">2.</span> <span class="nav-text">Stream特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6"><span class="nav-number">3.</span> <span class="nav-text">Stream运行机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">4.</span> <span class="nav-text">Stream的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream%E5%B8%B8%E7%94%A8API"><span class="nav-number">5.</span> <span class="nav-text">Stream常用API</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -143,7 +139,7 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -193,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/17/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/17/java/javaStreamAPI/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -206,7 +202,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          lambda表达式的使用
+          Java Stream API
         </h1>
 
         <div class="post-meta-container">
@@ -218,7 +214,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2021-09-17 00:00:00 / 修改时间：13:41:17" itemprop="dateCreated datePublished" datetime="2021-09-17T00:00:00+08:00">2021-09-17</time>
+      <time title="创建时间：2021-09-17 00:00:00 / 修改时间：14:01:45" itemprop="dateCreated datePublished" datetime="2021-09-17T00:00:00+08:00">2021-09-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -247,49 +243,50 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Lambda表达式介绍"><a href="#Lambda表达式介绍" class="headerlink" title="Lambda表达式介绍"></a>Lambda表达式介绍</h1><blockquote>
-<p>Lambda表达式是 Java8 中最重要的新功能之一。使用 Lambda 表达 式可以替代只有一个抽象函数的接口实现，告别匿名内部类，代码看 起来更简洁易懂。Lambda表达式同时还提升了对集合、框架的迭代、 遍历、过滤数据的操作。</p>
+        <h3 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h3><blockquote>
+<p>A sequence of elements supporting sequential and parallel aggregate operations</p>
+<p>Stream是一组用来处理数组、集合的API</p>
 </blockquote>
-<h1 id="Lambda表达式特点"><a href="#Lambda表达式特点" class="headerlink" title="Lambda表达式特点"></a>Lambda表达式特点</h1><p>1：函数式编程 </p>
-<p>2：参数类型自动推断 </p>
-<p>3：代码量少，简洁</p>
-<h1 id="lambda表达式使用"><a href="#lambda表达式使用" class="headerlink" title="lambda表达式使用"></a>lambda表达式使用</h1><h3 id="1、Lambda表达式概念"><a href="#1、Lambda表达式概念" class="headerlink" title="1、Lambda表达式概念"></a>1、Lambda表达式概念</h3><p>lambda表达式可以替代只有一个抽象函数的接口实现，告别匿名内部类，代码看起来更简洁易懂</p>
-<p>lambda表达式同时还提升了对集合、框架的迭代、遍历、过滤数据的操作</p>
-<p>lambda可以极大的减少代码冗余，同时代码的可读性要好过冗长的内部类，匿名类</p>
-<span id="more"></span>
-<h3 id="2、lambda表达式的语法"><a href="#2、lambda表达式的语法" class="headerlink" title="2、lambda表达式的语法"></a>2、lambda表达式的语法</h3><p>​        LambdaParameters -&gt; LambdaBody</p>
-<p>​        args-&gt;expr或者（object … args）-&gt;{函数式接口抽象方法实现逻辑}</p>
-<p>​        1、（）参数的个数，根据函数式接口里面抽象的参数个数来决定，当参数只有一个的时候，（）可以省略</p>
-<p>​        2、当expr逻辑非常简单的时候，{}和return可以省略</p>
-<h3 id="3、表达式案例"><a href="#3、表达式案例" class="headerlink" title="3、表达式案例"></a>3、表达式案例</h3><p>​        ()-&gt;{}</p>
-<p>​        ()-&gt;{System.out.println(1);}</p>
-<p>​        ()-&gt;System.out.println(1)</p>
-<p>​        ()-&gt;{return 100;}</p>
-<p>​        ()-&gt;100</p>
-<p>​        ()-&gt;null</p>
-<p>​        (int x)-&gt;{return x+1;}</p>
-<p>​        (int x)-&gt;x+1</p>
-<p>​        (x)-&gt;x+1</p>
-<p>​        x-&gt;x+1</p>
-<p><img src="/image/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/image-20210917133640328.png" alt="image-20210917133640328"></p>
-<p><img src="/image/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/image-20210917133709168.png" alt="image-20210917133709168"></p>
-<h1 id="Lambda表达式应用场景"><a href="#Lambda表达式应用场景" class="headerlink" title="Lambda表达式应用场景"></a>Lambda表达式应用场景</h1><p>任何有函数式接口的地方</p>
-<h1 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h1><p>只有一个抽象方法（Object类中的方法除外）的接口是函数式接口</p>
-<p>Supplier 代表一个输出</p>
-<p>Consumer 代表一个输入 BiConsumer 代表两个输入</p>
-<p>Function 代表一个输入，一个输出（一般输入和输出是不同类型的） UnaryOperator 代表一个输入，一个输出（输入和输出是相同类型的）</p>
-<p>BiFunction 代表两个输入，一个输出（一般输入和输出是不同类型的） BinaryOperator 代表两个输入，一个输出（输入和输出是相同类型的）</p>
-<h1 id="方法的引用"><a href="#方法的引用" class="headerlink" title="方法的引用"></a>方法的引用</h1><p><img src="/image/lambda%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E4%BD%BF%E7%94%A8/image-20210917133848183.png" alt="image-20210917133848183"></p>
 <ul>
-<li><p>静态方法引用：如果函数式接口的实现恰好可以通过调用一个静 态方法来实现，那么就可以使用静态方法引用 </p>
-</li>
-<li><p>实例方法引用：如果函数式接口的实现恰好可以通过调用一个实 例的实例方法来实现，那么就可以使用实例方法引用 </p>
-</li>
-<li><p>对象方法引用：抽象方法的第一个参数类型刚好是实例方法的类 型，抽象方法剩余的参数恰好可以当做实例方法的参数。如果函 数式接口的实现能由上面说的实例方法调用来实现的话，那么就 可以使用对象方法引用 </p>
-</li>
-<li><p>构造方法引用：如果函数式接口的实现恰好可以通过调用一个类 的构造方法来实现，那么就可以使用构造方法引用</p>
+<li><p>Java 8之所以费这么大功夫引入函数式编程，原因有二：</p>
+<p>– 代码简洁函数式编程写出的代码简洁且意图明确，使用stream接口让你从 此告别for循环。</p>
+<p>– 多核友好，Java函数式编程使得编写并行程序从未如此简单，你需要的全部 就是调用一下parallel()方法。</p>
 </li>
 </ul>
+<span id="more"></span>
+
+<h3 id="Stream特性"><a href="#Stream特性" class="headerlink" title="Stream特性"></a>Stream特性</h3><p>1：不是数据结构，没有内部存储 </p>
+<p>2：不支持索引访问 </p>
+<p>3：延迟计算 </p>
+<p>4：支持并行 </p>
+<p>5：很容易生成数组或集合（List，Set） </p>
+<p>6：支持过滤，查找，转换，汇总，聚合等操作</p>
+<h3 id="Stream运行机制"><a href="#Stream运行机制" class="headerlink" title="Stream运行机制"></a>Stream运行机制</h3><p>Stream分为 源source，中间操作，终止操作 </p>
+<p>流的源可以是一个数组、一个集合、一个生成器方法，一个I/O通 道等等。 </p>
+<p>一个流可以有零个和或者多个中间操作，每一个中间操作都会返回 一个新的流，供下一个操作使用。一个流只会有一个终止操作 </p>
+<p>Stream只有遇到终止操作，它的源才开始执行遍历操作</p>
+<h3 id="Stream的创建"><a href="#Stream的创建" class="headerlink" title="Stream的创建"></a>Stream的创建</h3><p>1、通过数组 </p>
+<p>2、通过集合来 </p>
+<p>3、通过Stream.generate方法来创建 </p>
+<p>4、通过Stream.iterate方法来创建 </p>
+<p>5、其他API创建</p>
+<h3 id="Stream常用API"><a href="#Stream常用API" class="headerlink" title="Stream常用API"></a>Stream常用API</h3><ul>
+<li>中间操作</li>
+</ul>
+<p>过滤 filter </p>
+<p>去重 distinct </p>
+<p>排序 sorted </p>
+<p>截取 limit、skip </p>
+<p>转换 map/flatMap </p>
+<p>其他 peek</p>
+<ul>
+<li>终止操作</li>
+</ul>
+<p>循环 forEach </p>
+<p>计算 min、max、count、 average </p>
+<p>匹配 anyMatch、 allMatch、 noneMatch、 findFirst、 findAny </p>
+<p>汇聚 reduce </p>
+<p>收集器 toArray collect</p>
 
     </div>
 
@@ -303,13 +300,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/09/15/java%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="prev" title="java多线程">
-                  <i class="fa fa-chevron-left"></i> java多线程
+                <a href="/2021/09/17/java/java%E7%BA%BF%E7%A8%8B%E6%B1%A0/" rel="prev" title="java线程池">
+                  <i class="fa fa-chevron-left"></i> java线程池
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/09/17/java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/" rel="next" title="Java自定义注解">
-                  Java自定义注解 <i class="fa fa-chevron-right"></i>
+                <a href="/2021/09/23/Spring/Spring%E5%88%9D%E8%AF%86/" rel="next" title="Spring初识">
+                  Spring初识 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
